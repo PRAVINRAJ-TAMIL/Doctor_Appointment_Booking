@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class DoctorModel {
@@ -21,7 +23,7 @@ List<DoctorModel> doctors = [
     description:gyo,
     degree:     "(MBBS, DGO)",
     image: "lib/assets/image/doctor1.png",
-    color: Color.fromARGB(255, 193, 215, 234),
+    color: const Color.fromARGB(255, 193, 215, 234),
   ),
   DoctorModel(
     id: 2,
@@ -29,7 +31,7 @@ List<DoctorModel> doctors = [
     description: ortho,
     degree:     "(MBBS,MS (Ortho))",
     image: "lib/assets/image/doctor2.png",
-    color: Color.fromARGB(255, 193, 215, 234),
+    color: const Color.fromARGB(255, 193, 215, 234),
   ),
   DoctorModel(
     id: 3,
@@ -37,7 +39,7 @@ List<DoctorModel> doctors = [
     description:ent ,
     image: "lib/assets/image/doctor3.png",
     degree:     "(MBBS, DLO)",
-    color: Color.fromARGB(255, 193, 215, 234),
+    color: const Color.fromARGB(255, 193, 215, 234),
   ),
 
   DoctorModel(
@@ -46,7 +48,7 @@ List<DoctorModel> doctors = [
     description:paedi ,
     image: "lib/assets/image/doctor4.png",
     degree:     "(MBBS, DLO)",
-    color: Color.fromARGB(255, 193, 215, 234),
+    color: const Color.fromARGB(255, 193, 215, 234),
   ),
   DoctorModel(
     id: 5,
@@ -54,7 +56,7 @@ List<DoctorModel> doctors = [
     description:radio ,
     image: "lib/assets/image/doctor5.png",
     degree:     "(MBBS, DLO)",
-    color: Color.fromARGB(255, 193, 215, 234),
+    color: const Color.fromARGB(255, 193, 215, 234),
   ),
   DoctorModel(
     id: 6,
@@ -62,7 +64,7 @@ List<DoctorModel> doctors = [
     description:ayush ,
     image: "lib/assets/image/doctor1.png",
     degree:     "(MBBS, DLO)",
-    color: Color.fromARGB(255, 193, 215, 234),
+    color: const Color.fromARGB(255, 193, 215, 234),
   ),
 ];
 

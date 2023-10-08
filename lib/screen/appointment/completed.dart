@@ -1,11 +1,14 @@
-// ignore_for_file: file_names
+
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/utils/colors.dart';
+import 'package:medical/utils/string.dart';
 
-class UPCOMING extends StatelessWidget {
-  const UPCOMING({
+class Completed extends StatelessWidget {
+  const Completed({
     super.key,
     required this.doctor,
     required this.hos,
@@ -16,11 +19,12 @@ class UPCOMING extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(children: [
-        const Text("Doctor"),
+        Text("Completed",style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.w700),),
+        const SizedBox(height: 10,),
         Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
-              color: const Color.fromARGB(255, 235, 243, 233)),
+              color: const Color.fromARGB(255, 196, 233, 246)),
           height: MediaQuery.of(context).size.width / 1.7,
           width: MediaQuery.of(context).size.width / 1.1,
           child: Column(
@@ -35,7 +39,7 @@ class UPCOMING extends StatelessWidget {
                       children: [
                         CircleAvatar(
                             radius: 30,
-                            backgroundColor: const Color.fromARGB(255, 242, 243, 243),
+                            backgroundColor: const Color.fromARGB(255, 246, 246, 246),
                             child: Image.asset(
                               doctor.image,
                               height: 50,
@@ -80,63 +84,63 @@ class UPCOMING extends StatelessWidget {
                   ],
                 ),
               ),
-              const Divider(
+               Divider(
                 indent: 20,
                 endIndent: 20,
+                 color:MEDCOLOR.primery,
               ),
-              const Row(
+               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  
                   Row(
                     children: [
-                     
-                      CircleAvatar(
-                        radius: 5,
-                        backgroundColor: Colors.green,
-                      ),
-                      SizedBox(width: 5,),
-                      Text("Conformed"),
+                      const Icon(Icons.access_time_sharp),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.time),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.access_time_sharp),
-                      SizedBox(width: 5,),
-                      Text("09:15 AM"),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.date_range_outlined),
-                      SizedBox(width: 5,),
-                      Text("12/10/2023"),
+                      const Icon(Icons.date_range_outlined),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.date),
                     ],
                   ),
                 ],
               ),
-            const Divider(
+             Divider(
               indent: 20,
               endIndent: 20,
+               color:MEDCOLOR.primery,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: (){}, child:const Text("Reschudule")),
-              
-            ElevatedButton(onPressed: (){}, child:const Text("Cancel")),
+                 const CircleAvatar(
+                        radius: 5,
+                        backgroundColor: Color.fromARGB(255, 234, 110, 110),
+                      ),
+                      const SizedBox(width: 5,),
+                Text("Complete",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: const Color.fromARGB(197, 3, 112, 20)),),
+           
 ],
             ),
-              const SizedBox(
-                height: 10,
-              ),
+            Divider(
+              indent: 20,
+              endIndent: 20,
+              // thickness: 1,
+              color:MEDCOLOR.primery,
+            )
+             
             ],
           ),
         ),
     const SizedBox(height: 30,),
-      Container(
+  Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
-              color: const Color.fromARGB(255, 235, 243, 233)),
+              color: const Color.fromARGB(255, 196, 233, 246)),
           height: MediaQuery.of(context).size.width / 1.7,
           width: MediaQuery.of(context).size.width / 1.1,
           child: Column(
@@ -151,7 +155,7 @@ class UPCOMING extends StatelessWidget {
                       children: [
                         CircleAvatar(
                             radius: 30,
-                            backgroundColor: const Color.fromARGB(255, 242, 243, 243),
+                            backgroundColor: const Color.fromARGB(255, 246, 246, 246),
                             child: Image.asset(
                               doctor.image,
                               height: 50,
@@ -196,59 +200,61 @@ class UPCOMING extends StatelessWidget {
                   ],
                 ),
               ),
-              const Divider(
+               Divider(
                 indent: 20,
                 endIndent: 20,
+                 color:MEDCOLOR.primery,
               ),
-              const Row(
+               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  
                   Row(
                     children: [
-                     
-                      CircleAvatar(
-                        radius: 5,
-                        backgroundColor: Colors.green,
-                      ),
-                      SizedBox(width: 5,),
-                      Text("Conformed"),
+                      const Icon(Icons.access_time_sharp),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.time),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.access_time_sharp),
-                      SizedBox(width: 5,),
-                      Text("09:15 AM"),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.date_range_outlined),
-                      SizedBox(width: 5,),
-                      Text("12/10/2023"),
+                      const Icon(Icons.date_range_outlined),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.date),
                     ],
                   ),
                 ],
               ),
-            const Divider(
+             Divider(
               indent: 20,
               endIndent: 20,
+               color:MEDCOLOR.primery,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: (){}, child:const Text("Reschudule")),
-              
-            ElevatedButton(onPressed: (){}, child:const Text("Cancel")),
+                 const CircleAvatar(
+                        radius: 5,
+                        backgroundColor: Color.fromARGB(255, 234, 110, 110),
+                      ),
+                      const SizedBox(width: 5,),
+                Text("Complete",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: const Color.fromARGB(197, 3, 112, 20)),),
+           
 ],
             ),
-              const SizedBox(
-                height: 10,
-              ),
+            Divider(
+              indent: 20,
+              endIndent: 20,
+              // thickness: 1,
+              color:MEDCOLOR.primery,
+            )
+             
             ],
           ),
         ),
    
+const SizedBox(height: 30,),
+    
       ]),
     );
   }

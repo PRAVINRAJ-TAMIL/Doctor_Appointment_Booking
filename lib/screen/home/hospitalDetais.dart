@@ -1,22 +1,25 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:medical/component/aboutHospital.dart';
 import 'package:medical/component/doctorList.dart';
 import 'package:medical/component/hospitalD.dart';
 import 'package:medical/model/doctorModel.dart';
-import 'package:medical/model/model.dart';
+import 'package:medical/model/hospitalModel.dart';
 import 'package:medical/screen/home/home.dart';
 import 'package:medical/screen/message/chatScreen.dart';
+import 'package:medical/utils/colors.dart';
 
 class HospitalDetail extends StatelessWidget {
   const HospitalDetail({super.key, required this.hos, required this.doctor});
-final Hospital hos;
-final DoctorModel doctor;
+  final Hospital hos;
+  final DoctorModel doctor;
   @override
   Widget build(BuildContext context) {
     return Material(
       child: SafeArea(
           child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: MEDCOLOR.secoundry,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -27,64 +30,78 @@ final DoctorModel doctor;
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pop(context,MaterialPageRoute(builder: (context)=>Home()));
+                        Navigator.pop(context,
+                            MaterialPageRoute(builder: (context) => const Home()));
                       },
-                      child: Icon(Icons.arrow_back_ios),
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 14,top: 10),
+                        child: Icon(Icons.arrow_back_ios),
+                      ),
                     ),
                     InkWell(
                       onTap: () {},
-                      child: Icon(Icons.more_vert_sharp),
+                      child: const Icon(Icons.more_vert_sharp),
                     ),
                   ],
                 ),
               ),
-               SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-                    HosptitalLogo(hos: hos),
-                     SizedBox(
+              HosptitalLogo(hos: hos,docor: doctor),
+              const SizedBox(
                 height: 20,
               ),
-  Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        InkWell(
-                          onTap:(){
-                                                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ChatScreen()));
-
-                          },
-                          child: Icon(Icons.message)),
-                           SizedBox(
-                width: 50,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const ChatScreen()));
+                      },
+                      child: const Icon(Icons.message)),
+                  const SizedBox(
+                    width: 50,
+                  ),
+                  const Icon(Icons.call),
+                ],
               ),
-                        Icon(Icons.call),
-                      ],
-                    ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 height: MediaQuery.of(context).size.height / 1,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(14),
                         topRight: Radius.circular(14)),
-                    color: Color.fromARGB(206, 239, 237, 237),
+                    color: MEDCOLOR.secoundry,
                     boxShadow: [
                       BoxShadow(
                           blurRadius: 3,
-                          color: Color.fromARGB(64, 208, 204, 204))
+                          color: MEDCOLOR.primery
+                          )
                     ]),
                 child: Column(
-                  children:[
-
-                    SizedBox(height: 30,),
-                    AboutHospital(hos: hos),
-                  
-
-                    SizedBox(height: 30,),
-                    DoctorList(doctor:doctor),
+                  children: [
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(14.0),
+                      child: AboutHospital(hos: hos),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: DoctorList(doctor: doctor,),
+                    ),
                   ],
                 ),
               )
@@ -96,39 +113,5 @@ final DoctorModel doctor;
   }
 }
 
-  // List doctor_image = [
-  //   "lib/assets/image/doctor1.png",
 
-  //   "lib/assets/image/doctor2.png",
-  //   "lib/assets/image/doctor3.png",
-  //   "lib/assets/image/doctor4.png",
-  //   "lib/assets/image/doctor5.png",
-
-  //   "lib/assets/image/doctor1.png",
-  // ];
-
-  // List doctor_name = [
-  //   "Dr.Suvarna",
-  //   "Dr.Priyank",
-  //   "Dr.Supriya",
-  //   "Dr.Basant Kumar",
-  //   "Dr.Nisha",
-  //   "Dr.Manisha"
-  // ];
-  // List degree = [
-  //   "(MBBS, DGO)",
-  //   "(MBBS,MS (Ortho))",
-  //   "(MBBS, DLO)",
-  //   "(MBBS, MD (Paediatrics))",
-  //   "(MBBS,DMRD)",
-  //   "(DHB,BHMS,CSD)"
-  // ];
-// List special=[
-//   "	Gynaecologist",
-//   "	Orthopaedic Surgeon",
-//   "	ENT Surgeon",
-//   " Paediatrician",
-//   "Radiology",
-//   "AYUSH Doctor",
-// ];
 

@@ -1,5 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:medical/model/model.dart';
+import 'package:medical/model/hospitalModel.dart';
 
  class HospitalList extends StatelessWidget {
    const HospitalList({super.key, required this.hos, required this.press,});
@@ -15,12 +17,12 @@ final VoidCallback press;
            Expanded(
             flex: 3,
              child: Container (
-                          margin: EdgeInsets.symmetric(vertical: 4, horizontal: 10),
-                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(221, 255, 255, 255),
+                              color: const Color.fromARGB(221, 255, 255, 255),
                               borderRadius: BorderRadius.circular(6),
-                              boxShadow: [
+                              boxShadow: const [
                                 BoxShadow(
                                     color: Color.fromARGB(22, 0, 0, 0),
                                     blurRadius: 6,
@@ -35,7 +37,7 @@ final VoidCallback press;
                               ),
                               Text(
                                 hos.title,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w600,
                                     color: Color.fromARGB(206, 52, 50, 50)),

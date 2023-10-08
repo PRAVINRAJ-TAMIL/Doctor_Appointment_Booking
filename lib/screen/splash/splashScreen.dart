@@ -1,8 +1,13 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/login/login_Screen.dart';
 import 'package:medical/screen/login/signup.dart';
+import 'package:medical/utils/colors.dart';
+import 'package:medical/utils/image.dart';
+import 'package:medical/utils/string.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -13,35 +18,35 @@ class SplashScreen extends StatelessWidget {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Container(
-            color: Color.fromARGB(255, 167, 205, 235),
+            color:  MEDCOLOR.primery,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Column(
               children: [
-                SizedBox(),
+                const SizedBox(),
                 Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context,MaterialPageRoute(builder:(context)=>BottomNAvigation()));
+                        Navigator.push(context,MaterialPageRoute(builder:(context)=>const BottomNAvigation()));
                       },
-                      child: Text("Skip"),
+                      child:  Text(MEDSTRING.skip),
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 150,
                 ),
                 Center(
                   child: Container(
                  
                       alignment: Alignment.center,
-                      child: Lottie.asset('lib/assets/json/splash1.json',
+                      child: Lottie.asset(MEDIMAGE.splash,
                           fit: BoxFit.fill)),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
-                Text("DOCTOR APPOINTMENT"),
-                SizedBox(
+                Text(MEDSTRING.doct_appointment),
+                const SizedBox(
                   height: 50,
                 ),
                 Row(
@@ -53,17 +58,17 @@ class SplashScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
+                                  builder: (context) => const LoginScreen()));
                         },
-                        child: Text("Sign In")),
+                        child: Text(MEDSTRING.signin)),
                     ElevatedButton(
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SignUp()));
+                                  builder: (context) => const SignUp()));
                         },
-                        child: Text("Sign Up"))
+                        child: Text(MEDSTRING.signup))
                   ],
                 ),
               ],

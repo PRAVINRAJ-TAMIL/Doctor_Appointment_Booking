@@ -1,5 +1,10 @@
+// ignore: duplicate_ignore
+
+
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:medical/model/model.dart';
+import 'package:medical/model/hospitalModel.dart';
 
  class AboutHospital extends StatelessWidget {
    const AboutHospital({super.key,required this.hos});
@@ -9,12 +14,12 @@ import 'package:medical/model/model.dart';
    Widget build(BuildContext context) {
      return Column(
       children: [
-        Row(
+        const Row(
           children: [Text("About Hospital",
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.w600))],
         ),
-        Text("${hos.description}"),
+        Text(hos.description),
       ],
      );
      

@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:medical/component/hospitalList.dart';
 import 'package:medical/model/doctorModel.dart';
-import 'package:medical/model/model.dart';
+import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/screen/home/doctor.dart';
 import 'package:medical/screen/home/hospitalDetais.dart';
+import 'package:medical/utils/colors.dart';
+import 'package:medical/utils/image.dart';
+import 'package:medical/utils/string.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -14,25 +18,20 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   late final Hospital hos;
+  late final DoctorModel doctor;
 
-  List doct = [
-    "Psychiatrist",
-    "Cardiologist",
-    "Family medicine",
-    "Radiologist",
-    "Neurologist",
-    "Ophthalmologist",
-  ];
+  
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            backgroundColor: const Color.fromARGB(211, 255, 255, 255),
+          // backgroundColor: Color.fromARGB(255, 240, 252, 255),
+            backgroundColor: MEDCOLOR.ternery,
             body: SingleChildScrollView(
                 child: Column(children: [
-              const Padding(
-                padding: EdgeInsets.all(10.0),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -41,12 +40,11 @@ class _HomeState extends State<Home> {
                       backgroundColor: Colors.black,
                       child: CircleAvatar(
                         radius: 30,
-                        backgroundImage:
-                            AssetImage("lib/assets/image/doctor5.png"),
+                        backgroundImage: AssetImage(MEDIMAGE.doctor_img_5),
                         backgroundColor: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "WELCOME!",
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
@@ -54,19 +52,23 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
+              const Divider(
+                endIndent: 10,
+                indent: 10,
+              ),
               const SizedBox(
-                height: 50,
+                height: 10,
               ),
 
 //// Doctor list
 
-              const Padding(
-                padding: EdgeInsets.only(left: 10.0),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
                 child: Row(
                   children: [
                     Text(
-                      "Doctors",
-                      style: TextStyle(
+                      MEDSTRING.doctor,
+                      style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
                           color: Color.fromARGB(161, 0, 0, 0)),
@@ -86,27 +88,41 @@ class _HomeState extends State<Home> {
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return Container(
-                        margin: const EdgeInsets.symmetric(
-                            vertical: 6, horizontal: 10),
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 213, 255, 220),
-                            borderRadius: BorderRadius.circular(24),
-                            boxShadow: [
-                              const BoxShadow(
-                                color: Color.fromARGB(73, 0, 255, 47),
-                                blurRadius: 6,
-                              )
-                            ]),
-                        child: Center(
-                          child: Text(
-                            doct[index],
-                            style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Color.fromARGB(206, 52, 50, 50)),
-                            textAlign: TextAlign.center,
+                      return InkWell(
+                        onTap: (){
+                        },
+                        child: InkWell(
+                          onTap: (){
+                             Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DoctorsL(doctor: doctors[index],hos: hospitals[index],)));
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.symmetric(
+                                vertical: 6, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 213, 255, 220),
+                                borderRadius: BorderRadius.circular(24),
+                                boxShadow: const [
+                                  BoxShadow(
+                                    color: Color.fromARGB(73, 0, 255, 47),
+                                    blurRadius: 6,
+                                  )
+                                ]),
+                            child: Center(
+                              child: Text(
+                               
+                                
+                                doctors[index].description,
+                                style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color.fromARGB(206, 52, 50, 50)),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
                           ),
                         ),
                       );
@@ -122,7 +138,6 @@ class _HomeState extends State<Home> {
                     ///// Emergency
 
                     Container(
-                      
                       width: MediaQuery.of(context).size.width / 2,
                       margin: const EdgeInsets.symmetric(
                           vertical: 6, horizontal: 10),
@@ -130,31 +145,31 @@ class _HomeState extends State<Home> {
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 193, 204, 214),
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            const BoxShadow(
+                          boxShadow: const [
+                            BoxShadow(
                               color: Color.fromARGB(176, 67, 67, 67),
                               blurRadius: 6,
                             )
                           ]),
                       child: Column(
                         children: [
-                          Lottie.asset('lib/assets/json/emer.json',
+                          Lottie.asset(MEDIMAGE.emer_img,
                               height: MediaQuery.of(context).size.height / 7.8,
                               width: MediaQuery.of(context).size.width / 2.5,
                               fit: BoxFit.fill),
                           const SizedBox(
                             height: 5,
                           ),
-                          const Text(
-                            "Emergency",
-                            style: TextStyle(
+                          Text(
+                            MEDSTRING.emer,
+                            style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w800,
                                 color: Colors.red),
                           ),
-                          const Text(
-                            "Book Appointment",
-                            style: TextStyle(
+                          Text(
+                            MEDSTRING.book_appoint,
+                            style: const TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.red),
@@ -165,37 +180,37 @@ class _HomeState extends State<Home> {
                     ///// Visit Home
 
                     Container(
-                      width: MediaQuery.of(context).size.width /  2,
+                      width: MediaQuery.of(context).size.width / 2,
                       margin: const EdgeInsets.symmetric(
                           vertical: 6, horizontal: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 198, 211, 222),
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            const BoxShadow(
+                          boxShadow: const [
+                            BoxShadow(
                               color: Color.fromARGB(176, 67, 67, 67),
                               blurRadius: 6,
                             )
                           ]),
                       child: Column(
                         children: [
-                          Lottie.asset('lib/assets/json/home1.json',
+                          Lottie.asset(MEDIMAGE.visit_homr_img,
                               fit: BoxFit.fill),
                           const SizedBox(
                             height: 5,
                           ),
-                          const Text(
-                            "Visit Home",
-                            style: TextStyle(
+                          Text(
+                            MEDSTRING.visit_home,
+                            style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w800,
                             ),
                             textAlign: TextAlign.center,
                           ),
-                          const Text(
-                            "Book Appointment",
-                            style: TextStyle(
+                          Text(
+                            MEDSTRING.book_appoint,
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.w400),
                           ),
                         ],
@@ -204,33 +219,33 @@ class _HomeState extends State<Home> {
                     ///// Visit Hospital
 
                     Container(
-                      width: MediaQuery.of(context).size.width /  2,
+                      width: MediaQuery.of(context).size.width / 2,
                       margin: const EdgeInsets.symmetric(
                           vertical: 6, horizontal: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 193, 204, 214),
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            const BoxShadow(
+                          boxShadow: const [
+                            BoxShadow(
                               color: Color.fromARGB(176, 67, 67, 67),
                               blurRadius: 6,
                             )
                           ]),
                       child: Column(
                         children: [
-                          Lottie.asset('lib/assets/json/hospital2.json',
+                          Lottie.asset(MEDIMAGE.visit_hos_img,
                               height: MediaQuery.of(context).size.height / 7.8,
                               width: MediaQuery.of(context).size.width / 2.5,
                               fit: BoxFit.fill),
-                          const Text(
-                            "Visit Hospital",
-                            style: TextStyle(
+                          Text(
+                            MEDSTRING.visit_hos,
+                            style: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w800),
                           ),
-                          const Text(
-                            "Book Appointment",
-                            style: TextStyle(
+                          Text(
+                            MEDSTRING.book_appoint,
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.w400),
                           ),
                         ],
@@ -238,38 +253,38 @@ class _HomeState extends State<Home> {
                     ),
                     ///// Ambulance
                     Container(
-                      width: MediaQuery.of(context).size.width /  2,
+                      width: MediaQuery.of(context).size.width / 2,
                       margin: const EdgeInsets.symmetric(
                           vertical: 6, horizontal: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
                           color: const Color.fromARGB(255, 193, 204, 214),
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            const BoxShadow(
+                          boxShadow: const [
+                            BoxShadow(
                               color: Color.fromARGB(176, 67, 67, 67),
                               blurRadius: 6,
                             )
                           ]),
                       child: Column(
                         children: [
-                          Lottie.asset('lib/assets/json/Ambu.json',
+                          Lottie.asset(MEDIMAGE.ambulance,
                               height: MediaQuery.of(context).size.height / 8.2,
                               width: MediaQuery.of(context).size.width / 2.5,
                               fit: BoxFit.fill),
                           const SizedBox(
                             height: 5,
                           ),
-                          const Text(
-                            "Ambulance",
-                            style: TextStyle(
+                          Text(
+                            MEDSTRING.ambulance,
+                            style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w800,
                                 color: Colors.red),
                           ),
-                          const Text(
-                            "Book Appointment",
-                            style: TextStyle(
+                          Text(
+                            MEDSTRING.book_appoint,
+                            style: const TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.red),
@@ -283,13 +298,13 @@ class _HomeState extends State<Home> {
               const SizedBox(
                 height: 10,
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 10.0),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
                 child: Row(
                   children: [
                     Text(
-                      "Hospitals ",
-                      style: TextStyle(
+                      MEDSTRING.hospital,
+                      style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
                           color: Color.fromARGB(161, 0, 0, 0)),
@@ -302,19 +317,19 @@ class _HomeState extends State<Home> {
 //// Hospital List
 
               SizedBox(
-                width: MediaQuery.of(context).size.width /  0.5,
-                   height: MediaQuery.of(context).size.height /  0.5,
+                width: MediaQuery.of(context).size.width / 0.5,
+                height: MediaQuery.of(context).size.height / 0.5,
                 child: Expanded(
                   child: GridView.builder(
                       gridDelegate:
                           const SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 200,
-                              childAspectRatio: 3 / 2,
-                              crossAxisSpacing: 20,
-                              mainAxisSpacing: 20),
+                              maxCrossAxisExtent: 250,
+                              childAspectRatio: 3/ 2,
+                              crossAxisSpacing: 1,
+                              mainAxisSpacing: 1
+                              ),
                       itemCount: hospitals.length,
                       shrinkWrap: true,
-                      
                       itemBuilder: (BuildContext context, int index) => InkWell(
                             onTap: () {
                               Navigator.push(
@@ -334,7 +349,8 @@ class _HomeState extends State<Home> {
                                     MaterialPageRoute(
                                         builder: (context) => HospitalDetail(
                                             hos: hospitals[index],
-                                            doctor: doctors[index])));
+                                            doctor: doctors[index]
+                                            )));
                               },
                             ),
                           )),

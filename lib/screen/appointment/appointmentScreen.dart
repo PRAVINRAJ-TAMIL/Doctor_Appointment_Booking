@@ -1,7 +1,13 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:medical/model/doctorModel.dart';
-import 'package:medical/model/model.dart';
+import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/screen/appointment/canceled.dart';
+import 'package:medical/screen/appointment/completed.dart';
 import 'package:medical/screen/appointment/upComing.dart';
+import 'package:medical/utils/colors.dart';
+import 'package:medical/utils/string.dart';
 
 
 
@@ -17,11 +23,9 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
   int _buindex = 1;
 
   final _apponment = [
+    Completed(doctor: doctors[1], hos: hospitals[0],),
     UPCOMING(doctor: doctors[3], hos: hospitals[3],),
-    UPCOMING(doctor: doctors[1], hos: hospitals[0],),
-     UPCOMING(doctor: doctors[4], hos: hospitals[4],),
-    Container(child: Center(child: Text("UpComing"))),
-    Container(child: Center(child: Text("Canceled"))),
+    Canceled(doctor: doctors[4], hos: hospitals[5],),
   ];
 
   @override
@@ -29,21 +33,33 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
     return Material(
       child: SafeArea(
           child: Scaffold(
+            backgroundColor: MEDCOLOR.ternery,
         body: SingleChildScrollView(
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.start,
+            
             children: [
-              Text("Appointment Schudele"),
-              SizedBox(
-                height: 30,
+               const SizedBox(
+                height: 10,
               ),
+              Text(MEDSTRING.appointment_schu,style: const TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+              const SizedBox(
+                height: 2,
+              ),  const Divider(
+              indent: 20,
+              endIndent: 20,
+              // thickness: 1,
+              color:Color.fromARGB(255, 118, 118, 118),
+            ), const SizedBox(
+                height: 2,
+              ), 
               Container(
-                height: MediaQuery.of(context).size.height / 14,
+                height: MediaQuery.of(context).size.height / 17,
                 width: double.maxFinite,
-                margin: EdgeInsets.symmetric(horizontal: 11),
-                color: Color.fromARGB(255, 240, 252, 241),
+                // margin: EdgeInsets.symmetric(horizontal: 5),
+                color: MEDCOLOR.secoundry,
                 child: Padding(
-                  padding: const EdgeInsets.all(5.0),
+                  padding: const EdgeInsets.only(top: 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -56,17 +72,15 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
                           child: Container(
                               height: double.maxFinite,
 
-                              // padding: EdgeInsets.symmetric(horizontal: 14,vertical: 25),
-
-                              decoration: BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: _buindex == 0
-                                      ? Color.fromARGB(197, 146, 238, 150)
-                                      : Color.fromARGB(255, 199, 234, 253),
+                                      ? const Color.fromARGB(197, 146, 238, 150)
+                                      : MEDCOLOR.primery,
                                   borderRadius: BorderRadius.circular(24)),
                               child: Padding(
                                 padding: const EdgeInsets.all(14),
-                                child: Text(
-                                  "Completed",
+                                child: Text(MEDSTRING.complet
+                                  
                                 ),
                               ))),
                       InkWell(
@@ -79,12 +93,12 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
                               height: double.maxFinite,
                               decoration: BoxDecoration(
                                   color: _buindex == 1
-                                      ? Color.fromARGB(197, 146, 238, 150)
-                                      : Color.fromARGB(255, 199, 234, 253),
+                                      ? const Color.fromARGB(197, 146, 238, 150)
+                                      : MEDCOLOR.primery,
                                   borderRadius: BorderRadius.circular(24)),
                               child: Padding(
                                 padding: const EdgeInsets.all(14),
-                                child: Text("UpComing"),
+                                child: Text(MEDSTRING.upcome),
                               ))),
                       InkWell(
                           onTap: () {
@@ -96,19 +110,19 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
                               height: double.maxFinite,
                               decoration: BoxDecoration(
                                   color: _buindex == 2
-                                      ? Color.fromARGB(197, 146, 238, 150)
-                                      : Color.fromARGB(255, 199, 234, 253),
+                                      ? const Color.fromARGB(197, 146, 238, 150)
+                                      : MEDCOLOR.primery,
                                   borderRadius: BorderRadius.circular(24)),
                               child: Padding(
                                 padding: const EdgeInsets.all(14),
-                                child: Text("Canceled"),
+                                child: Text(MEDSTRING.canceled),
                               ))),
                     ],
                   ),
                 ),
               ),
-              SizedBox(
-                height: 30,
+              const SizedBox(
+                height: 10,
               ),
               _apponment[_buindex]
             ],

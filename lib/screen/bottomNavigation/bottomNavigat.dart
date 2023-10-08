@@ -1,9 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:medical/model/doctorModel.dart';
 import 'package:medical/screen/appointment/appointmentScreen.dart';
 import 'package:medical/screen/home/home.dart';
 import 'package:medical/screen/me/me.dart';
 import 'package:medical/screen/message/message.dart';
+import 'package:medical/utils/colors.dart';
 
 class BottomNAvigation extends StatefulWidget {
   const BottomNAvigation({super.key});
@@ -15,20 +17,20 @@ class BottomNAvigation extends StatefulWidget {
 class _BottomNAvigationState extends State<BottomNAvigation> {
   int _select = 0;
   final _screen = [
-    Home(),
-    AppointmentSchudele(),
-    Message(),
-    Me(),
+    const Home(),
+    const AppointmentSchudele(),
+    const Message(),
+    const Me(),
   ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       body: _screen[_select],
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 65,
         child: BottomNavigationBar(
-          items: [
+          items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
@@ -38,8 +40,8 @@ class _BottomNAvigationState extends State<BottomNAvigation> {
                  BottomNavigationBarItem(
                 icon: Icon(Icons.person_4), label: "Me")
           ],
-          backgroundColor: Colors.blueGrey,
-          selectedItemColor: Colors.white,
+          backgroundColor: MEDCOLOR.primery,
+          selectedItemColor: MEDCOLOR.secoundry,
           unselectedItemColor: Colors.black,
           type: BottomNavigationBarType.fixed,
           onTap: (intex) {
@@ -47,7 +49,7 @@ class _BottomNAvigationState extends State<BottomNAvigation> {
               _select = intex;
             });
           },
-          selectedLabelStyle: TextStyle(
+          selectedLabelStyle: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
