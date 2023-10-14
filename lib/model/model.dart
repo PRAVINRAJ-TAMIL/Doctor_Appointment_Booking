@@ -1,18 +1,17 @@
-import 'package:flutter/material.dart';
 
 ////Hospital
 
 class Hospital {
   final String image, title, description;
   final int  id;
-  final Color color;
+  // final Color color;
 
   Hospital(
       {required this.image,
       required this.title,
       required this.description,
       required this.id,
-      required this.color});
+      });
 }
 
 List <Hospital> hospitals=[
@@ -21,42 +20,42 @@ List <Hospital> hospitals=[
       title: "Apollo",
       description: apollo,
       image:"lib/assets/image/apollo.png",
-      color:Color.fromARGB(255, 193, 215, 234),
+      // color:const Color.fromARGB(255, 193, 215, 234),
   ),
    Hospital(
       id: 2,
       title: "Fortis",
       description: fortis,
       image:"lib/assets/image/fortis.png",
-      color:Color.fromARGB(255, 193, 215, 234),
+      // color:const Color.fromARGB(255, 193, 215, 234),
   ),
    Hospital(
       id: 3,
       title: "KIMS",
       description: kims,
       image:    "lib/assets/image/kims.png",
-      color:Color.fromARGB(255, 193, 215, 234),
+      // color:const Color.fromARGB(255, 193, 215, 234),
   ),
    Hospital(
       id: 4,
       title: "Medanta",
       description: medanta,
       image:    "lib/assets/image/medanta.png",
-      color:Color.fromARGB(255, 193, 215, 234),
+      // color:const Color.fromARGB(255, 193, 215, 234),
   ),
    Hospital(
       id: 5,
       title: "AIG",
       description: aig,
       image:    "lib/assets/image/Aig.png",
-      color:Color.fromARGB(255, 193, 215, 234),
+      // color:const Color.fromARGB(255, 193, 215, 234),
   ),
    Hospital(
       id: 6,
       title: "CMC",
       description: cmg,
       image: "lib/assets/image/cmc.png",
-      color:Color.fromARGB(255, 193, 215, 234),
+      // color:const Color.fromARGB(255, 193, 215, 234),
   ),
 ];
 

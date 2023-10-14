@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:medical/component/aboutHospital.dart';
 import 'package:medical/component/doctorList.dart';
 import 'package:medical/component/hospitalD.dart';
@@ -30,8 +31,8 @@ class HospitalDetail extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.pop(context,
-                            MaterialPageRoute(builder: (context) => const Home()));
+Get.to(() => const Home());
+                       
                       },
                       child: const Padding(
                         padding: EdgeInsets.only(left: 14,top: 10),
@@ -57,10 +58,8 @@ class HospitalDetail extends StatelessWidget {
                 children: [
                   InkWell(
                       onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const ChatScreen()));
+                        Get.to(() => const ChatScreen());
+              
                       },
                       child: const Icon(Icons.message)),
                   const SizedBox(

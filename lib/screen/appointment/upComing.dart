@@ -1,8 +1,11 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/utils/colors.dart';
+import 'package:medical/utils/string.dart';
 
 class UPCOMING extends StatelessWidget {
   const UPCOMING({
@@ -16,7 +19,8 @@ class UPCOMING extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(children: [
-        const Text("Doctor"),
+         Text(MEDSTRING.upcome,style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.w700),),
+        const SizedBox(height: 10,),
         Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
@@ -84,7 +88,7 @@ class UPCOMING extends StatelessWidget {
                 indent: 20,
                 endIndent: 20,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
@@ -92,24 +96,24 @@ class UPCOMING extends StatelessWidget {
                      
                       CircleAvatar(
                         radius: 5,
-                        backgroundColor: Colors.green,
+                        backgroundColor: MEDCOLOR.green,
                       ),
-                      SizedBox(width: 5,),
-                      Text("Conformed"),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.conform),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.access_time_sharp),
-                      SizedBox(width: 5,),
-                      Text("09:15 AM"),
+                      const Icon(Icons.access_time_sharp),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.time),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.date_range_outlined),
-                      SizedBox(width: 5,),
-                      Text("12/10/2023"),
+                      const Icon(Icons.date_range_outlined),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.date),
                     ],
                   ),
                 ],
@@ -121,9 +125,20 @@ class UPCOMING extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(onPressed: (){}, child:const Text("Reschudule")),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                              backgroundColor: MEDCOLOR.green),
+                  onPressed: (){}, child:Text(MEDSTRING.reschudule,style:TextStyle(color: MEDCOLOR.text),)),
               
-            ElevatedButton(onPressed: (){}, child:const Text("Cancel")),
+            ElevatedButton(
+               style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                              backgroundColor: MEDCOLOR.green),onPressed: (){}, child: Text(MEDSTRING.cancel,style:TextStyle(color: MEDCOLOR.text))),
 ],
             ),
               const SizedBox(
@@ -133,7 +148,7 @@ class UPCOMING extends StatelessWidget {
           ),
         ),
     const SizedBox(height: 30,),
-      Container(
+       Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
               color: const Color.fromARGB(255, 235, 243, 233)),
@@ -200,7 +215,7 @@ class UPCOMING extends StatelessWidget {
                 indent: 20,
                 endIndent: 20,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
@@ -208,24 +223,24 @@ class UPCOMING extends StatelessWidget {
                      
                       CircleAvatar(
                         radius: 5,
-                        backgroundColor: Colors.green,
+                        backgroundColor: MEDCOLOR.green,
                       ),
-                      SizedBox(width: 5,),
-                      Text("Conformed"),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.conform),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.access_time_sharp),
-                      SizedBox(width: 5,),
-                      Text("09:15 AM"),
+                      const Icon(Icons.access_time_sharp),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.time),
                     ],
                   ),
                   Row(
                     children: [
-                      Icon(Icons.date_range_outlined),
-                      SizedBox(width: 5,),
-                      Text("12/10/2023"),
+                      const Icon(Icons.date_range_outlined),
+                      const SizedBox(width: 5,),
+                      Text(MEDSTRING.date),
                     ],
                   ),
                 ],
@@ -237,9 +252,20 @@ class UPCOMING extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(onPressed: (){}, child:const Text("Reschudule")),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                              backgroundColor: MEDCOLOR.green),
+                  onPressed: (){}, child:Text(MEDSTRING.reschudule,style:TextStyle(color: MEDCOLOR.text),)),
               
-            ElevatedButton(onPressed: (){}, child:const Text("Cancel")),
+            ElevatedButton(
+               style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                              backgroundColor: MEDCOLOR.green),onPressed: (){}, child: Text(MEDSTRING.cancel,style:TextStyle(color: MEDCOLOR.text))),
 ],
             ),
               const SizedBox(
@@ -248,7 +274,7 @@ class UPCOMING extends StatelessWidget {
             ],
           ),
         ),
-   
+  
       ]),
     );
   }

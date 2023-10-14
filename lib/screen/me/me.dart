@@ -15,13 +15,14 @@ class _MeState extends State<Me> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          backgroundColor: MEDCOLOR.ternery,
+          backgroundColor: MEDCOLOR.bg,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ListTile(
-            title: const Text("PRAVIN"),
+            title: const Text("PRAVIN", style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.w600),),
             trailing: CircleAvatar(
               radius: 40,
               backgroundColor: MEDCOLOR.secoundry,
@@ -54,13 +55,13 @@ class _MeState extends State<Me> {
             onTap: () {},
             leading: Container(
                 padding: const EdgeInsets.all(7),
-                decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 175, 243, 180),
+                decoration:  BoxDecoration(
+                    color:  MEDCOLOR.green,
                     shape: BoxShape.circle),
-                child: const Icon(
+                child:  const Icon(
                   Icons.settings,
                   size: 40,
-                  color: Colors.green,
+                  color:  Colors.green
                 )),
             title: const Text("Setting"),
             trailing: const Icon(Icons.arrow_forward_ios),

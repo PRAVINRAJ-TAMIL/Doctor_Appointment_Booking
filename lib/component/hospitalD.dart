@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/utils/colors.dart';
 
 class HosptitalLogo extends StatelessWidget {
   const HosptitalLogo({super.key, required this.hos, required DoctorModel docor});
@@ -19,10 +20,10 @@ class HosptitalLogo extends StatelessWidget {
               ),
          Text(
                 hos.title,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
-                    color: Color.fromARGB(179, 0, 0, 0)),
+                    color: MEDCOLOR.text),
               ),
       ],
     );
@@ -42,10 +43,10 @@ final DoctorModel doctor;
     
          Text(
                 doctor.description,
-                style: const TextStyle(
+                style:  TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
-                    color: Color.fromARGB(255, 0, 0, 0)),
+                    color: MEDCOLOR.text),
               ),
       ],
     );

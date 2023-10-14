@@ -1,7 +1,9 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:medical/model/doctorModel.dart';
+import 'package:medical/utils/colors.dart';
+import 'package:medical/utils/string.dart';
 
 class DoctorList extends StatelessWidget {
  const DoctorList({super.key, required this.doctor });
@@ -23,11 +25,11 @@ class DoctorList extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(horizontal: 10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  color: const Color.fromARGB(255, 242, 243, 243),
-                                  boxShadow: const [
+                                  color: MEDCOLOR.secoundry,
+                                  boxShadow:  [
                                     BoxShadow(
                                         color:
-                                            Color.fromARGB(242, 123, 121, 121),
+                                            MEDCOLOR.shad,
                                         blurRadius: 5)
                                   ]),
                               child: SizedBox(
@@ -42,8 +44,7 @@ class DoctorList extends StatelessWidget {
                                         children: [
                                           CircleAvatar(
                                               radius: 30,
-                                              backgroundColor: const Color.fromARGB(
-                                                  255, 242, 243, 243),
+                                              backgroundColor: MEDCOLOR.secoundry,
                                               child: Image.asset(
                                                 doctors[index].image,
                                                 height: 50,
@@ -75,9 +76,9 @@ class DoctorList extends StatelessWidget {
                                       ),
                                     ),
                                     const SizedBox(height: 10,),
-                                     const Row(
+                                     Row(
                                        children: [
-                                         Text("Specialization", style: TextStyle(
+                                         Text(MEDSTRING.special, style: TextStyle(
                                                     fontSize: 12,
                                                     fontWeight:
                                                         FontWeight.w600),),

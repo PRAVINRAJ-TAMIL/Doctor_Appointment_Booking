@@ -19,7 +19,7 @@ class Completed extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(children: [
-        Text("Completed",style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.w700),),
+        Text(MEDSTRING.complet,style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.w700),),
         const SizedBox(height: 10,),
         Container(
           decoration: BoxDecoration(
@@ -117,12 +117,12 @@ class Completed extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 const CircleAvatar(
+                 CircleAvatar(
                         radius: 5,
-                        backgroundColor: Color.fromARGB(255, 234, 110, 110),
+                        backgroundColor: MEDCOLOR.red,
                       ),
                       const SizedBox(width: 5,),
-                Text("Complete",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: const Color.fromARGB(197, 3, 112, 20)),),
+                Text(MEDSTRING.complet,style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: Colors.green),),
            
 ],
             ),
@@ -233,19 +233,17 @@ class Completed extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 const CircleAvatar(
+               CircleAvatar(
                         radius: 5,
-                        backgroundColor: Color.fromARGB(255, 234, 110, 110),
+                        backgroundColor:MEDCOLOR.red,
                       ),
                       const SizedBox(width: 5,),
-                Text("Complete",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: const Color.fromARGB(197, 3, 112, 20)),),
-           
+            Text(MEDSTRING.complet,style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: Colors.green),),           
 ],
             ),
             Divider(
               indent: 20,
               endIndent: 20,
-              // thickness: 1,
               color:MEDCOLOR.primery,
             )
              

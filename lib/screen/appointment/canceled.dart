@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/string.dart';
 
 class Canceled extends StatelessWidget {
@@ -18,7 +19,7 @@ class Canceled extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(children: [
-        Text("Canceled",style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.w700),),
+        Text(MEDSTRING.complet,style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.w700),),
         const SizedBox(height: 10,),
         Container(
           decoration: BoxDecoration(
@@ -38,7 +39,7 @@ class Canceled extends StatelessWidget {
                       children: [
                         CircleAvatar(
                             radius: 30,
-                            backgroundColor: const Color.fromARGB(255, 246, 246, 246),
+                            backgroundColor: MEDCOLOR.secoundry,
                             child: Image.asset(
                               doctor.image,
                               height: 50,
@@ -83,10 +84,10 @@ class Canceled extends StatelessWidget {
                   ],
                 ),
               ),
-               const Divider(
+                Divider(
                 indent: 20,
                 endIndent: 20,
-                 color:Color.fromARGB(255, 247, 208, 208),
+                 color:MEDCOLOR.comdiv,
               ),
                Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -108,25 +109,24 @@ class Canceled extends StatelessWidget {
                   ),
                 ],
               ),
-             const Divider(
+              Divider(
               indent: 20,
               endIndent: 20,
-               color:Color.fromARGB(255, 247, 208, 208),
+               color:MEDCOLOR.comdiv,
             ),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 const Icon(Icons.cancel_outlined,color: Color.fromARGB(255, 228, 98, 98),),
+                  Icon(Icons.cancel_outlined,color:MEDCOLOR.red,),
                       const SizedBox(width: 5,),
-                Text("Canceled",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: const Color.fromARGB(197, 254, 1, 1)),),
+                Text("Canceled",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: MEDCOLOR.red),),
            
 ],
             ),
-            const Divider(
+           Divider(
               indent: 20,
               endIndent: 20,
-              // thickness: 1,
-              color:Color.fromARGB(255, 247, 208, 208),
+   color:MEDCOLOR.comdiv,
             )
              
             ],
@@ -196,10 +196,10 @@ class Canceled extends StatelessWidget {
                   ],
                 ),
               ),
-               const Divider(
+                Divider(
                 indent: 20,
                 endIndent: 20,
-                 color:Color.fromARGB(255, 247, 208, 208),
+               color:MEDCOLOR.comdiv,
               ),
                Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -221,25 +221,25 @@ class Canceled extends StatelessWidget {
                   ),
                 ],
               ),
-             const Divider(
+           Divider(
               indent: 20,
               endIndent: 20,
-               color:Color.fromARGB(255, 247, 208, 208),
+       color:MEDCOLOR.comdiv,
             ),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 const Icon(Icons.cancel_outlined,color: Color.fromARGB(255, 228, 98, 98),),
+                 Icon(Icons.cancel_outlined,color: MEDCOLOR.red,),
                       const SizedBox(width: 5,),
-                Text("Canceled",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: const Color.fromARGB(197, 254, 1, 1)),),
+                Text(MEDSTRING.complet,style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: MEDCOLOR.red),),
            
 ],
             ),
-            const Divider(
+       Divider(
               indent: 20,
               endIndent: 20,
               // thickness: 1,
-              color:Color.fromARGB(255, 247, 208, 208),
+           color:MEDCOLOR.comdiv,
             )
              
             ],
@@ -309,10 +309,10 @@ class Canceled extends StatelessWidget {
                   ],
                 ),
               ),
-               const Divider(
+                Divider(
                 indent: 20,
                 endIndent: 20,
-                 color:Color.fromARGB(255, 247, 208, 208),
+                  color:MEDCOLOR.comdiv,
               ),
                Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -334,25 +334,25 @@ class Canceled extends StatelessWidget {
                   ),
                 ],
               ),
-             const Divider(
+    Divider(
               indent: 20,
               endIndent: 20,
-               color:Color.fromARGB(255, 247, 208, 208),
+                color:MEDCOLOR.comdiv,
             ),
           Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 const Icon(Icons.cancel_outlined,color: Color.fromARGB(255, 228, 98, 98),),
+              Icon(Icons.cancel_outlined,color: MEDCOLOR.red,),
                       const SizedBox(width: 5,),
-                Text("Canceled",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: const Color.fromARGB(197, 254, 1, 1)),),
+                Text("Canceled",style: GoogleFonts.agdasima(fontSize: 22,fontWeight: FontWeight.w700,color: MEDCOLOR.red),),
            
 ],
             ),
-            const Divider(
+ Divider(
               indent: 20,
               endIndent: 20,
               // thickness: 1,
-              color:Color.fromARGB(255, 247, 208, 208),
+          color:MEDCOLOR.comdiv,
             ),
              
             ],

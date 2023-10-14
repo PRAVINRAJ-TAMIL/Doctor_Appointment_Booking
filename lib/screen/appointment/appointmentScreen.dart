@@ -33,10 +33,9 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
     return Material(
       child: SafeArea(
           child: Scaffold(
-            backgroundColor: MEDCOLOR.ternery,
+            backgroundColor: MEDCOLOR.bg,
         body: SingleChildScrollView(
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             
             children: [
                const SizedBox(
@@ -48,7 +47,6 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
               ),  const Divider(
               indent: 20,
               endIndent: 20,
-              // thickness: 1,
               color:Color.fromARGB(255, 118, 118, 118),
             ), const SizedBox(
                 height: 2,
@@ -74,12 +72,12 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
 
                                 decoration: BoxDecoration(
                                   color: _buindex == 0
-                                      ? const Color.fromARGB(197, 146, 238, 150)
+                                      ?  MEDCOLOR.green
                                       : MEDCOLOR.primery,
                                   borderRadius: BorderRadius.circular(24)),
                               child: Padding(
                                 padding: const EdgeInsets.all(14),
-                                child: Text(MEDSTRING.complet
+                                child: Text(MEDSTRING.complet,style:const TextStyle(fontSize: 16,fontWeight: FontWeight.w500), 
                                   
                                 ),
                               ))),
@@ -93,12 +91,12 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
                               height: double.maxFinite,
                               decoration: BoxDecoration(
                                   color: _buindex == 1
-                                      ? const Color.fromARGB(197, 146, 238, 150)
+                                      ?  MEDCOLOR.green
                                       : MEDCOLOR.primery,
                                   borderRadius: BorderRadius.circular(24)),
                               child: Padding(
                                 padding: const EdgeInsets.all(14),
-                                child: Text(MEDSTRING.upcome),
+                                child: Text(MEDSTRING.upcome,style:const TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
                               ))),
                       InkWell(
                           onTap: () {
@@ -110,12 +108,12 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
                               height: double.maxFinite,
                               decoration: BoxDecoration(
                                   color: _buindex == 2
-                                      ? const Color.fromARGB(197, 146, 238, 150)
+                                      ? MEDCOLOR.green
                                       : MEDCOLOR.primery,
                                   borderRadius: BorderRadius.circular(24)),
                               child: Padding(
                                 padding: const EdgeInsets.all(14),
-                                child: Text(MEDSTRING.canceled),
+                                child: Text(MEDSTRING.canceled,style:const TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
                               ))),
                     ],
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/screen/message/chatScreen.dart';
@@ -13,7 +14,7 @@ class Message extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: MEDCOLOR.ternery,
+        backgroundColor: MEDCOLOR.bg,
         body:  SingleChildScrollView(
             child: Column(
               children: [
@@ -23,11 +24,11 @@ class Message extends StatelessWidget {
                 Container(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     decoration: BoxDecoration(
-                        color: MEDCOLOR.ternery,
+                        color: MEDCOLOR.bg,
                         borderRadius: BorderRadius.circular(10),
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
-                              color: Color.fromARGB(255, 225, 221, 221), blurRadius: 1,)
+                              color: MEDCOLOR.secoundry, blurRadius: 1,)
                         ]
                         ),
                     child: Row(
@@ -100,8 +101,8 @@ class Message extends StatelessWidget {
                                   decoration: BoxDecoration(
                                       color: MEDCOLOR.secoundry, shape: BoxShape.circle),
                                   child: Container(
-                                    decoration: const BoxDecoration(
-                                        color: Color.fromARGB(255, 3, 230, 14),
+                                    decoration:  BoxDecoration(
+                                        color: MEDCOLOR.green,
                                         shape: BoxShape.circle),
                                   ),
                                 )
@@ -127,13 +128,12 @@ class Message extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 1),
                         child: ListTile(
-                          // minVerticalPadding: 20,
                           onTap: () {
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>const ChatScreen()));
+                            Get.to(() => const ChatScreen());
                           },
                           leading: CircleAvatar(
                             radius: 31,
-                            backgroundColor:Colors.black,
+                            backgroundColor:MEDCOLOR.text,
                             child: CircleAvatar(
                               backgroundColor: MEDCOLOR.secoundry,
                               radius: 30,
@@ -146,7 +146,7 @@ class Message extends StatelessWidget {
                             // MEDSTRING.hi,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(fontSize: 16, color: Colors.black),
+                            style: TextStyle(fontSize: 16, color:MEDCOLOR.text),
                           ),
                           subtitle: Text(doctors[index].degree),
                           trailing: Text(MEDSTRING.time),

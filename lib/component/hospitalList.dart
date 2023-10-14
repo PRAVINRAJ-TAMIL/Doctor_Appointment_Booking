@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/utils/colors.dart';
 
  class HospitalList extends StatelessWidget {
    const HospitalList({super.key, required this.hos, required this.press,});
@@ -20,9 +21,9 @@ final VoidCallback press;
                           margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 10),
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           decoration: BoxDecoration(
-                              color: const Color.fromARGB(221, 255, 255, 255),
+                              color: MEDCOLOR.secoundry,
                               borderRadius: BorderRadius.circular(6),
-                              boxShadow: const [
+                              boxShadow:  const [
                                 BoxShadow(
                                     color: Color.fromARGB(22, 0, 0, 0),
                                     blurRadius: 6,
@@ -37,10 +38,10 @@ final VoidCallback press;
                               ),
                               Text(
                                 hos.title,
-                                style: const TextStyle(
+                                style:  TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w600,
-                                    color: Color.fromARGB(206, 52, 50, 50)),
+                                    color: MEDCOLOR.text),
                                 textAlign: TextAlign.end,
                               ),
                             ],

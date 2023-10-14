@@ -27,22 +27,22 @@ class _BottomNAvigationState extends State<BottomNAvigation> {
     return SafeArea(
         child: Scaffold(
       body: _screen[_select],
-      bottomNavigationBar: SizedBox(
+            bottomNavigationBar: SizedBox(
         height: 65,
         child: BottomNavigationBar(
-          items: const [
+                    items: const [
             BottomNavigationBarItem(
                 icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_filled), label: "Appointment"),
+                icon: Icon(Icons.schedule_rounded), label: "Schedule"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_max_outlined), label: "Message"),
-                 BottomNavigationBarItem(
+                icon: Icon(Icons.message_rounded), label: "Message"),
+            BottomNavigationBarItem(
                 icon: Icon(Icons.person_4), label: "Me")
           ],
-          backgroundColor: MEDCOLOR.primery,
+backgroundColor: MEDCOLOR.primery,
           selectedItemColor: MEDCOLOR.secoundry,
-          unselectedItemColor: Colors.black,
+          unselectedItemColor: MEDCOLOR.text,
           type: BottomNavigationBarType.fixed,
           onTap: (intex) {
             setState(() {

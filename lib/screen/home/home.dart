@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:medical/component/hospitalList.dart';
 import 'package:medical/model/doctorModel.dart';
@@ -26,8 +27,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          // backgroundColor: Color.fromARGB(255, 240, 252, 255),
-            backgroundColor: MEDCOLOR.ternery,
+            backgroundColor: MEDCOLOR.bg,
             body: SingleChildScrollView(
                 child: Column(children: [
               Padding(
@@ -37,7 +37,7 @@ class _HomeState extends State<Home> {
                   children: [
                     CircleAvatar(
                       radius: 31,
-                      backgroundColor: Colors.black,
+                      backgroundColor: MEDCOLOR.text,
                       child: CircleAvatar(
                         radius: 30,
                         backgroundImage: AssetImage(MEDIMAGE.doctor_img_5),
@@ -68,10 +68,10 @@ class _HomeState extends State<Home> {
                   children: [
                     Text(
                       MEDSTRING.doctor,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
-                          color: Color.fromARGB(161, 0, 0, 0)),
+                          color: MEDCOLOR.text),
                       textAlign: TextAlign.start,
                     ),
                   ],
@@ -90,13 +90,12 @@ class _HomeState extends State<Home> {
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: (){
+
                         },
                         child: InkWell(
                           onTap: (){
-                             Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => DoctorsL(doctor: doctors[index],hos: hospitals[index],)));
+                            Get.to(() => DoctorsL(doctor: doctors[index],hos: hospitals[index],));
+        
                           },
                           child: Container(
                             margin: const EdgeInsets.symmetric(
@@ -143,11 +142,11 @@ class _HomeState extends State<Home> {
                           vertical: 6, horizontal: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 193, 204, 214),
+                          color: MEDCOLOR.cont,
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: const [
+                          boxShadow:  [
                             BoxShadow(
-                              color: Color.fromARGB(176, 67, 67, 67),
+                              color: MEDCOLOR.shad,
                               blurRadius: 6,
                             )
                           ]),
@@ -162,18 +161,12 @@ class _HomeState extends State<Home> {
                           ),
                           Text(
                             MEDSTRING.emer,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w800,
-                                color: Colors.red),
+                                color: MEDCOLOR.red),
                           ),
-                          Text(
-                            MEDSTRING.book_appoint,
-                            style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.red),
-                          ),
+                          
                         ],
                       ),
                     ),
@@ -185,20 +178,23 @@ class _HomeState extends State<Home> {
                           vertical: 6, horizontal: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 198, 211, 222),
+                          color: MEDCOLOR.cont,
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: const [
+                          boxShadow:  [
                             BoxShadow(
-                              color: Color.fromARGB(176, 67, 67, 67),
+                              color: MEDCOLOR.shad,
                               blurRadius: 6,
                             )
                           ]),
                       child: Column(
                         children: [
+                          const SizedBox(
+                            height: 5,
+                          ),
                           Lottie.asset(MEDIMAGE.visit_homr_img,
                               fit: BoxFit.fill),
                           const SizedBox(
-                            height: 5,
+                            height: 10,
                           ),
                           Text(
                             MEDSTRING.visit_home,
@@ -224,11 +220,11 @@ class _HomeState extends State<Home> {
                           vertical: 6, horizontal: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 193, 204, 214),
+                          color: MEDCOLOR.cont,
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
-                              color: Color.fromARGB(176, 67, 67, 67),
+                              color: MEDCOLOR.shad,
                               blurRadius: 6,
                             )
                           ]),
@@ -258,11 +254,11 @@ class _HomeState extends State<Home> {
                           vertical: 6, horizontal: 10),
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 193, 204, 214),
+                          color: MEDCOLOR.cont,
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
-                              color: Color.fromARGB(176, 67, 67, 67),
+                              color: MEDCOLOR.shad,
                               blurRadius: 6,
                             )
                           ]),
@@ -277,17 +273,10 @@ class _HomeState extends State<Home> {
                           ),
                           Text(
                             MEDSTRING.ambulance,
-                            style: const TextStyle(
+                            style:  TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w800,
-                                color: Colors.red),
-                          ),
-                          Text(
-                            MEDSTRING.book_appoint,
-                            style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.red),
+                                color: MEDCOLOR.red),
                           ),
                         ],
                       ),
@@ -304,10 +293,10 @@ class _HomeState extends State<Home> {
                   children: [
                     Text(
                       MEDSTRING.hospital,
-                      style: const TextStyle(
+                      style:TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w600,
-                          color: Color.fromARGB(161, 0, 0, 0)),
+                          color: MEDCOLOR.text),
                       textAlign: TextAlign.start,
                     ),
                   ],
@@ -332,25 +321,16 @@ class _HomeState extends State<Home> {
                       shrinkWrap: true,
                       itemBuilder: (BuildContext context, int index) => InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => HospitalDetail(
-                                      hos: hospitals[index],
-                                      doctor: doctors[index],
-                                    ),
-                                  ));
+                              Get.to(() => HospitalDetail( hos: hospitals[index],
+                                      doctor: doctors[index],));
+                          
                             },
                             child: HospitalList(
                               hos: hospitals[index],
                               press: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => HospitalDetail(
-                                            hos: hospitals[index],
-                                            doctor: doctors[index]
-                                            )));
+                                Get.to(() =>  HospitalDetail(hos: hospitals[index],
+                                            doctor: doctors[index]));
+                          
                               },
                             ),
                           )),

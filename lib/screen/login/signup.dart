@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:medical/screen/login/login_Screen.dart';
 import 'package:medical/utils/colors.dart';
@@ -19,77 +20,76 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Scaffold(
-          backgroundColor: MEDCOLOR.primery,
-          body: Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const SizedBox(height: 30),
-                  Container(
-                      alignment: Alignment.center,
-                      child: Lottie.asset(MEDIMAGE.signup_img,
-                          fit: BoxFit.fill)),
-                  const SizedBox(height: 30),
-                   TextField(
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        label: Text(MEDSTRING.enter_ful_name),
-                        prefixIcon: const Icon(Icons.person_2_rounded)),
-                  ),
-                  const SizedBox(height: 30),
-               TextField(
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        label: Text(MEDSTRING.enter_mail),
-                        prefixIcon: const Icon(Icons.mail_outline)),
-                  ),
-                  const SizedBox(height: 30),
+      child: Scaffold(
+        backgroundColor: MEDCOLOR.primery,
+        body: Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 30),
+                Container(
+                    alignment: Alignment.center,
+                    child: Lottie.asset(MEDIMAGE.signup_img,
+                        fit: BoxFit.fill)),
+                const SizedBox(height: 30),
                  TextField(
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        label: Text(MEDSTRING.enter_ph),
-                        prefixIcon: const Icon(Icons.phone_iphone)),
-                  ),
-                  const SizedBox(height: 30),
-                  TextField(
-                    obscureText: passToggle ? true : false,
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        label:  Text(MEDSTRING.Enter_pass),
-                        prefixIcon: const Icon(Icons.lock_clock_rounded),
-                        suffixIcon: InkWell(
-                          onTap: () {
-                            if (passToggle == true) {
-                              passToggle = false;
-                            } else {
-                              passToggle = true;
-                            }
-                            setState(() {});
-                          },
-                          child: passToggle
-                              ? const Icon(CupertinoIcons.eye_slash_fill)
-                              : const Icon(CupertinoIcons.eye_fill),
-                        )),
-                  ),
-                  const SizedBox(height: 30),
-                  ElevatedButton(
-                      onPressed: () {}, child: Text(MEDSTRING.create_ac)),
-                  const SizedBox(height: 30),
-                  Text(MEDSTRING.already_have_ac),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const LoginScreen()));
-                      },
-                      child:  Text(MEDSTRING.login))
-                ],
-              ),
+                  decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      label: Text(MEDSTRING.enter_ful_name),
+                      prefixIcon: const Icon(Icons.person_2_rounded)),
+                ),
+                const SizedBox(height: 30),
+             TextField(
+                  decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      label: Text(MEDSTRING.enter_mail),
+                      prefixIcon: const Icon(Icons.mail_outline)),
+                ),
+                const SizedBox(height: 30),
+               TextField(
+                  decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      label: Text(MEDSTRING.enter_ph),
+                      prefixIcon: const Icon(Icons.phone_iphone)),
+                ),
+                const SizedBox(height: 30),
+                TextField(
+                  obscureText: passToggle ? true : false,
+                  decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      label:  Text(MEDSTRING.Enter_pass),
+                      prefixIcon: const Icon(Icons.lock_clock_rounded),
+                      suffixIcon: InkWell(
+                        onTap: () {
+                          if (passToggle == true) {
+                            passToggle = false;
+                          } else {
+                            passToggle = true;
+                          }
+                          setState(() {});
+                        },
+                        child: passToggle
+                            ? const Icon(CupertinoIcons.eye_slash_fill)
+                            : const Icon(CupertinoIcons.eye_fill),
+                      )),
+                ),
+                const SizedBox(height: 30),
+                ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                           backgroundColor: MEDCOLOR.butcolor,
+                    shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
+                ),),
+                    onPressed: () {}, child: Text(MEDSTRING.create_ac)),
+                const SizedBox(height: 30),
+                Text(MEDSTRING.already_have_ac),
+                TextButton(
+                    onPressed: () {
+                      Get.to(() => const LoginScreen());
+                    },
+                    child:  Text(MEDSTRING.login))
+              ],
             ),
           ),
         ),
