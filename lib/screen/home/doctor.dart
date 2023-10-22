@@ -1,19 +1,23 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 import 'package:medical/component/hospitalD.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/home/home.dart';
 import 'package:medical/screen/message/chatScreen.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/string.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DoctorsL extends StatelessWidget {
-  const DoctorsL({super.key, required this.doctor, required this.hos});
+  DoctorsL({super.key, required this.doctor, required this.hos});
   final DoctorModel doctor;
   final Hospital hos;
+  final phone = "+91987654321";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,11 +35,12 @@ class DoctorsL extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                InkWell(
-                    onTap: () {
-                      Get.to(() => Home());
+               IconButton(
+                onPressed: 
+                   () {
+                      Get.to(() => BottomNAvigation());
                     },
-                    child: const Icon(
+                   icon: Icon(
                       Icons.arrow_back_ios_rounded,
                     )),
                 const SizedBox(
@@ -65,10 +70,8 @@ class DoctorsL extends StatelessWidget {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               color: MEDCOLOR.secoundry,
-                              boxShadow:  [
-                                BoxShadow(
-                                    color: MEDCOLOR.shad,
-                                    blurRadius: 5)
+                              boxShadow: [
+                                BoxShadow(color: MEDCOLOR.shad, blurRadius: 5)
                               ]),
                           child: SizedBox(
                             child: Column(children: [
@@ -129,10 +132,10 @@ class DoctorsL extends StatelessWidget {
                                         MediaQuery.of(context).size.width / 2,
                                     child: Column(
                                       children: [
-                                      Row(
+                                        Row(
                                           children: [
                                             Text(
-                                             MEDSTRING.special,
+                                              MEDSTRING.special,
                                               style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w600),
@@ -159,27 +162,25 @@ class DoctorsL extends StatelessWidget {
                                     ),
                                   ),
                                   const SizedBox(
-                                    width: 20,
+                                    width: 10,
                                   ),
                                   Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
-                                        InkWell(
-                                            onTap: () {
+                                        IconButton(
+                                            onPressed: () {
                                               Get.to(() => ChatScreen());
                                             },
-                                            child: Icon(
+                                            icon: Icon(
                                               Icons.message,
                                               color: MEDCOLOR.primery,
                                             )),
-                                        const SizedBox(
-                                          width: 20,
-                                        ),
-                                        InkWell(
-                                            onTap: () {
-                                              Get.to(() => const ChatScreen());
+                                        
+                                        IconButton(
+                                            onPressed: () async {
+                                             FlutterPhoneDirectCaller.callNumber(phone);
                                             },
-                                            child: const Icon(Icons.call)),
+                                            icon: Icon(Icons.call))
                                       ]),
                                 ],
                               ),

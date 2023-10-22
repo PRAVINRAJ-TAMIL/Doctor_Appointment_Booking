@@ -4,6 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:medical/routes/routes.dart';
+import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/message/chat.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/image.dart';
@@ -42,17 +43,14 @@ class _ChatScreenState extends State<ChatScreen> {
             Text(MEDSTRING.helo),
           ],
         ),
-        leading: InkWell(
-          onTap: () {
-            Get.toNamed(Routes.bottomnavigation);
-          },
-          child: const Padding(
-            padding: EdgeInsets.only(
-              left: 14,
-            ),
-            child: Icon(Icons.arrow_back_ios),
-          ),
-        ),
+        leading:IconButton(
+                onPressed: 
+                   () {
+                      Get.to(() => BottomNAvigation());
+                    },
+                   icon: Icon(
+                      Icons.arrow_back_ios_rounded,
+                    )),
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 14.0),

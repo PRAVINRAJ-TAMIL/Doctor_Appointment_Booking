@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:medical/component/hospitalList.dart';
 import 'package:medical/model/doctorModel.dart';
@@ -20,11 +22,13 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   late final Hospital hos;
   late final DoctorModel doctor;
-
+final FirebaseAuth _auth=FirebaseAuth.instance;
   
 
   @override
   Widget build(BuildContext context) {
+  
+    // String? _displayName= _auth.currentUser!.username;
     return SafeArea(
         child: Scaffold(
             backgroundColor: MEDCOLOR.bg,
@@ -33,22 +37,23 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    CircleAvatar(
-                      radius: 31,
-                      backgroundColor: MEDCOLOR.text,
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundImage: AssetImage(MEDIMAGE.doctor_img_5),
-                        backgroundColor: Colors.white,
+                  
+                    Container(
+                      height:MediaQuery.of(context).size.height/10,
+                      width: MediaQuery.of(context).size.width/5,
+                      child: Image.asset(MEDIMAGE.logo,fit: BoxFit.cover,)),
+                 
+                    SizedBox(width: 50,),
+                   Padding(
+                     padding: const EdgeInsets.only(top: 30),
+                     child: Text(
+                        "WELCOME!",
+                        style:
+                           GoogleFonts.acme(fontSize: 24, fontWeight: FontWeight.w600,color: Color.fromARGB(255, 24, 70, 150)),
                       ),
-                    ),
-                    const Text(
-                      "WELCOME!",
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                    ),
+                   ),
                   ],
                 ),
               ),

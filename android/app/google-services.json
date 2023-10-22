@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "192379409133",
+    "firebase_url": "https://doctor-appointment-dfe62-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "doctor-appointment-dfe62",
+    "storage_bucket": "doctor-appointment-dfe62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192379409133:android:6c1dd14e18789a86fa32e4",
+        "android_client_info": {
+          "package_name": "com.example.medical"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjoi1ZeECP8wMRJsgEkqlpU8rc2MRDay8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

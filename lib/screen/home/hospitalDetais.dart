@@ -1,20 +1,23 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 import 'package:medical/component/aboutHospital.dart';
 import 'package:medical/component/doctorList.dart';
 import 'package:medical/component/hospitalD.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
-import 'package:medical/screen/home/home.dart';
+import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/message/chatScreen.dart';
 import 'package:medical/utils/colors.dart';
 
 class HospitalDetail extends StatelessWidget {
-  const HospitalDetail({super.key, required this.hos, required this.doctor});
+  HospitalDetail({super.key, required this.hos, required this.doctor});
   final Hospital hos;
   final DoctorModel doctor;
+  final phone = "+91987654321";
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -31,11 +34,10 @@ class HospitalDetail extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-Get.to(() => const Home());
-                       
+                        Get.to(() => const BottomNAvigation());
                       },
                       child: const Padding(
-                        padding: EdgeInsets.only(left: 14,top: 10),
+                        padding: EdgeInsets.only(left: 14, top: 10),
                         child: Icon(Icons.arrow_back_ios),
                       ),
                     ),
@@ -49,7 +51,7 @@ Get.to(() => const Home());
               const SizedBox(
                 height: 30,
               ),
-              HosptitalLogo(hos: hos,docor: doctor),
+              HosptitalLogo(hos: hos, docor: doctor),
               const SizedBox(
                 height: 20,
               ),
@@ -59,13 +61,16 @@ Get.to(() => const Home());
                   InkWell(
                       onTap: () {
                         Get.to(() => const ChatScreen());
-              
                       },
                       child: const Icon(Icons.message)),
                   const SizedBox(
                     width: 50,
                   ),
-                  const Icon(Icons.call),
+                  IconButton(
+                      onPressed: () async {
+                        FlutterPhoneDirectCaller.callNumber(phone);
+                      },
+                      icon: Icon(Icons.call))
                 ],
               ),
               const SizedBox(
@@ -80,10 +85,7 @@ Get.to(() => const Home());
                         topRight: Radius.circular(14)),
                     color: MEDCOLOR.secoundry,
                     boxShadow: [
-                      BoxShadow(
-                          blurRadius: 3,
-                          color: MEDCOLOR.primery
-                          )
+                      BoxShadow(blurRadius: 3, color: MEDCOLOR.primery)
                     ]),
                 child: Column(
                   children: [
@@ -99,7 +101,9 @@ Get.to(() => const Home());
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10.0),
-                      child: DoctorList(doctor: doctor,),
+                      child: DoctorList(
+                        doctor: doctor,
+                      ),
                     ),
                   ],
                 ),
@@ -111,6 +115,3 @@ Get.to(() => const Home());
     );
   }
 }
-
-
-

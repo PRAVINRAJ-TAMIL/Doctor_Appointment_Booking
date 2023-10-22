@@ -1,9 +1,12 @@
 import 'dart:async';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:medical/auth/auth_ser.dart';
+import 'package:medical/firebase_options.dart';
 import 'package:medical/screen/splash/splashScreen.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/image.dart';
@@ -11,31 +14,14 @@ import 'package:medical/utils/string.dart';
 
 // import 'routes/routes.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+ WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
+   runApp(const MyApp());
 }
 
-
-
-
-// class MyApp extends StatefulWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   State<MyApp> createState() => _MyAppState();
-// }
-
-// class _MyAppState extends State<MyApp> {
-//   
-//   @override
-//   Widget build(BuildContext context) {
-//     return const GetMaterialApp(
-//       debugShowCheckedModeBanner:false,
-//       // getPages: Routes().getpages,
-//       home: Splash(),
-//     );
-//   }
-// }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -43,8 +29,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  const GetMaterialApp(
       debugShowCheckedModeBanner:false,
-      // getPages: Routes().getpages,
       home: Splash(),
+            // home: Auth(),
+
     );
   }
 }
@@ -62,7 +49,7 @@ class _SplashState extends State<Splash> {
     Timer(
         const Duration(seconds:5),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => const SplashScreen())));
+            builder: (BuildContext context) => const Auth())));
   }
   @override
   Widget build(BuildContext context) {
