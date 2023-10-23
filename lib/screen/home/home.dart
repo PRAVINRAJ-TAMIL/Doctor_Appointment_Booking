@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -23,6 +24,7 @@ class _HomeState extends State<Home> {
   late final Hospital hos;
   late final DoctorModel doctor;
 final FirebaseAuth _auth=FirebaseAuth.instance;
+  final phone = "+91987654321";
   
 
   @override
@@ -141,149 +143,217 @@ final FirebaseAuth _auth=FirebaseAuth.instance;
                   children: [
                     ///// Emergency
 
-                    Container(
-                      width: MediaQuery.of(context).size.width / 2,
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 6, horizontal: 10),
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: MEDCOLOR.cont,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow:  [
-                            BoxShadow(
-                              color: MEDCOLOR.shad,
-                              blurRadius: 6,
-                            )
-                          ]),
-                      child: Column(
-                        children: [
-                          Lottie.asset(MEDIMAGE.emer_img,
-                              height: MediaQuery.of(context).size.height / 7.8,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              fit: BoxFit.fill),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            MEDSTRING.emer,
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w800,
-                                color: MEDCOLOR.red),
-                          ),
-                          
-                        ],
+                    InkWell(
+                        onTap: (){showDialog(                 
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(32.0))),
+shadowColor: MEDCOLOR.shad,
+                        backgroundColor: Colors.white,
+                        title: Lottie.asset(MEDIMAGE.cmson,
+                         
+                           fit: BoxFit.cover),
+                       
+                      ),
+                    );},
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 2,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 6, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        decoration: BoxDecoration(
+                            color: MEDCOLOR.cont,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow:  [
+                              BoxShadow(
+                                color: MEDCOLOR.shad,
+                                blurRadius: 6,
+                              )
+                            ]),
+                        child: Column(
+                          children: [
+                            Lottie.asset(MEDIMAGE.emer_img,
+                                height: MediaQuery.of(context).size.height / 7.8,
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                fit: BoxFit.fill),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              MEDSTRING.emer,
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w800,
+                                  color: MEDCOLOR.red),
+                            ),
+                            
+                          ],
+                        ),
                       ),
                     ),
                     ///// Visit Home
 
-                    Container(
-                      width: MediaQuery.of(context).size.width / 2,
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 6, horizontal: 10),
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: MEDCOLOR.cont,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow:  [
-                            BoxShadow(
-                              color: MEDCOLOR.shad,
-                              blurRadius: 6,
-                            )
-                          ]),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Lottie.asset(MEDIMAGE.visit_homr_img,
-                              fit: BoxFit.fill),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            MEDSTRING.visit_home,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w800,
+                    InkWell(
+                        onTap: (){showDialog(                 
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(32.0))),
+
+                        backgroundColor: Colors.white,
+                        title: Lottie.asset(MEDIMAGE.cmson,
+                         
+                           fit: BoxFit.cover),
+                       
+                      ),
+                    );},
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 2,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 6, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        decoration: BoxDecoration(
+                            color: MEDCOLOR.cont,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow:  [
+                              BoxShadow(
+                                color: MEDCOLOR.shad,
+                                blurRadius: 6,
+                              )
+                            ]),
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 5,
                             ),
-                            textAlign: TextAlign.center,
-                          ),
-                          Text(
-                            MEDSTRING.book_appoint,
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w400),
-                          ),
-                        ],
+                            Lottie.asset(MEDIMAGE.visit_homr_img,
+                                fit: BoxFit.fill),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              MEDSTRING.visit_home,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w800,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              MEDSTRING.book_appoint,
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     ///// Visit Hospital
 
-                    Container(
-                      width: MediaQuery.of(context).size.width / 2,
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 6, horizontal: 10),
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: MEDCOLOR.cont,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: MEDCOLOR.shad,
-                              blurRadius: 6,
-                            )
-                          ]),
-                      child: Column(
-                        children: [
-                          Lottie.asset(MEDIMAGE.visit_hos_img,
-                              height: MediaQuery.of(context).size.height / 7.8,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              fit: BoxFit.fill),
-                          Text(
-                            MEDSTRING.visit_hos,
-                            style: const TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w800),
-                          ),
-                          Text(
-                            MEDSTRING.book_appoint,
-                            style: const TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w400),
-                          ),
-                        ],
+                    InkWell(
+                         onTap: (){showDialog(                 
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                        shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(32.0))),
+
+                        backgroundColor: Colors.white,
+                        title: Lottie.asset(MEDIMAGE.cmson,
+                         
+                           fit: BoxFit.cover),
+                       
+                      ),
+                    );},
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 2,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 6, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        decoration: BoxDecoration(
+                            color: MEDCOLOR.cont,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: MEDCOLOR.shad,
+                                blurRadius: 6,
+                              )
+                            ]),
+                        child: Column(
+                          children: [
+                            Lottie.asset(MEDIMAGE.visit_hos_img,
+                                height: MediaQuery.of(context).size.height / 7.8,
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                fit: BoxFit.fill),
+                            Text(
+                              MEDSTRING.visit_hos,
+                              style: const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w800),
+                            ),
+                            Text(
+                              MEDSTRING.book_appoint,
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     ///// Ambulance
-                    Container(
-                      width: MediaQuery.of(context).size.width / 2,
-                      margin: const EdgeInsets.symmetric(
-                          vertical: 6, horizontal: 10),
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          color: MEDCOLOR.cont,
-                          borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
-                            BoxShadow(
-                              color: MEDCOLOR.shad,
-                              blurRadius: 6,
-                            )
-                          ]),
-                      child: Column(
-                        children: [
-                          Lottie.asset(MEDIMAGE.ambulance,
-                              height: MediaQuery.of(context).size.height / 8.2,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              fit: BoxFit.fill),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            MEDSTRING.ambulance,
-                            style:  TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w800,
-                                color: MEDCOLOR.red),
-                          ),
-                        ],
+                    InkWell(
+                      onTap: (){showDialog(
+                        // barrierColor: MEDCOLOR.primery,
+                        
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                     shape: RoundedRectangleBorder(
+		borderRadius: BorderRadius.circular(50),),
+shadowColor: Colors.black,
+                        backgroundColor: Color.fromARGB(255, 178, 178, 178),
+                        title: Column(
+                          children: [
+                            Center(child: const Text("Call Ambulance",style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),)),
+                           
+                            Divider(indent: 20,endIndent: 20,),
+                             Center(child: IconButton(onPressed: (){ FlutterPhoneDirectCaller.callNumber(phone);}, icon:Icon(Icons.phonelink_ring_rounded,color: MEDCOLOR.red,size: 50,))),
+                          ],
+                        ),
+                       
+                      ),
+                    );},
+
+                      child: Container(
+                        width: MediaQuery.of(context).size.width / 2,
+                        margin: const EdgeInsets.symmetric(
+                            vertical: 6, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        decoration: BoxDecoration(
+                            color: MEDCOLOR.cont,
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: MEDCOLOR.shad,
+                                blurRadius: 6,
+                              )
+                            ]),
+                        child: Column(
+                          children: [
+                            Lottie.asset(MEDIMAGE.ambulance,
+                                height: MediaQuery.of(context).size.height / 8.2,
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                fit: BoxFit.fill),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              MEDSTRING.ambulance,
+                              style:  TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w800,
+                                  color: MEDCOLOR.red),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

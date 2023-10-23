@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:medical/model/doctorModel.dart';
+import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/message/chatScreen.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/string.dart';
@@ -19,7 +20,20 @@ class Message extends StatelessWidget {
             child: Column(
               children: [
                 const SizedBox(height: 10,),
-                Text(MEDSTRING.msg,style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.w700),),
+                Row(
+                  children: [
+                    IconButton(
+                  onPressed: 
+                     () {
+                        Get.to(() => BottomNAvigation());
+                      },
+                     icon: Icon(
+                        Icons.arrow_back_ios_rounded,
+                      )),
+                      SizedBox(width: MediaQuery.of(context).size.width/4,),
+                    Text(MEDSTRING.msg,style: GoogleFonts.abel(fontSize: 20,fontWeight: FontWeight.w700),),
+                  ],
+                ),
                 const SizedBox(height: 10,),
                 Container(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -129,7 +143,7 @@ class Message extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 1),
                         child: ListTile(
                           onTap: () {
-                            Get.to(() => const ChatScreen());
+                            Get.to(() =>  ChatScreenAppBar(doctor: doctors[index]));
                           },
                           leading: CircleAvatar(
                             radius: 31,

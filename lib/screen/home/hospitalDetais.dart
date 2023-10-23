@@ -8,18 +8,23 @@ import 'package:medical/component/doctorList.dart';
 import 'package:medical/component/hospitalD.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/screen/appointment/bookAppointment.dart';
 import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/message/chatScreen.dart';
 import 'package:medical/utils/colors.dart';
 
 class HospitalDetail extends StatelessWidget {
+ 
+
   HospitalDetail({super.key, required this.hos, required this.doctor});
   final Hospital hos;
   final DoctorModel doctor;
   final phone = "+91987654321";
 
+int index =0;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,) {
+  
     return Material(
       child: SafeArea(
           child: Scaffold(
@@ -51,7 +56,7 @@ class HospitalDetail extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              HosptitalLogo(hos: hos, docor: doctor),
+              HosptitalLogo(hos: hos, doctor: doctor,),
               const SizedBox(
                 height: 20,
               ),
@@ -60,7 +65,7 @@ class HospitalDetail extends StatelessWidget {
                 children: [
                   InkWell(
                       onTap: () {
-                        Get.to(() => const ChatScreen());
+                        Get.to(() =>  ChatScreenAppBar(doctor: doctors[index]));
                       },
                       child: const Icon(Icons.message)),
                   const SizedBox(
@@ -105,6 +110,15 @@ class HospitalDetail extends StatelessWidget {
                         doctor: doctor,
                       ),
                     ),
+                    SizedBox(height: 20,),
+                      ElevatedButton(
+                                 style: ElevatedButton.styleFrom(
+                             backgroundColor: MEDCOLOR.butcolor,
+                      shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),)),
+                    onPressed:() {
+                                Get.to(() =>BookAppointment());
+                              }, child: Text("Book Appointment")),
                   ],
                 ),
               )

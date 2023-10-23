@@ -14,5 +14,6 @@ class MEDIMAGE{
   static String visit_homr_img="lib/assets/json/home1.json";
   static String visit_hos_img="lib/assets/json/hospital2.json";
   static String ambulance ="lib/assets/json/Ambu.json";
+  static String cmson ="lib/assets/json/comming.json";
   static String logo ="lib/assets/image/logo.png";
 }

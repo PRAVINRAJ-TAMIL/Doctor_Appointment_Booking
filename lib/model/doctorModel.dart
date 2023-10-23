@@ -2,7 +2,7 @@
 
 
 class DoctorModel {
-  final String image, title, degree, description;
+  final String image, title, degree, description, details, color;
   final int id;
   // final Color color;
 
@@ -12,7 +12,8 @@ class DoctorModel {
       required this.description,
       required this.id,
       required this.degree,
-      // required this.color
+      required this.details,
+      required this.color
       });
 }
 
@@ -23,7 +24,9 @@ List<DoctorModel> doctors = [
     description:gyo,
     degree:     "(MBBS, DGO)",
     image: "lib/assets/image/doctor1.png",
-    // color: const Color.fromARGB(255, 193, 215, 234),
+    details: detail,
+    color:detail
+    
   ),
   DoctorModel(
     id: 2,
@@ -31,7 +34,8 @@ List<DoctorModel> doctors = [
     description: ortho,
     degree:     "(MBBS,MS (Ortho))",
     image: "lib/assets/image/doctor2.png",
-    // color: const Color.fromARGB(255, 193, 215, 234),
+    details: detail,
+    color:detail
   ),
   DoctorModel(
     id: 3,
@@ -39,7 +43,8 @@ List<DoctorModel> doctors = [
     description:ent ,
     image: "lib/assets/image/doctor3.png",
     degree:     "(MBBS, DLO)",
-    // color: const Color.fromARGB(255, 193, 215, 234),
+    details: detail,
+    color:detail
   ),
 
   DoctorModel(
@@ -48,7 +53,8 @@ List<DoctorModel> doctors = [
     description:paedi ,
     image: "lib/assets/image/doctor4.png",
     degree:     "(MBBS, DLO)",
-    // color: const Color.fromARGB(255, 193, 215, 234),
+details: detail,
+color:detail
   ),
   DoctorModel(
     id: 5,
@@ -56,7 +62,8 @@ List<DoctorModel> doctors = [
     description:radio ,
     image: "lib/assets/image/doctor5.png",
     degree:     "(MBBS, DLO)",
-    // color: const Color.fromARGB(255, 193, 215, 234),
+    details: detail,
+    color:detail
   ),
   DoctorModel(
     id: 6,
@@ -64,7 +71,8 @@ List<DoctorModel> doctors = [
     description:ayush ,
     image: "lib/assets/image/doctor1.png",
     degree:     "(MBBS, DLO)",
-    // color: const Color.fromARGB(255, 193, 215, 234),
+  details: detail,
+  color:detail
   ),
 ];
 
@@ -74,3 +82,5 @@ String ent="ENT Surgeon";
 String paedi = " Paediatrician";
 String radio="Radiology";
 String ayush="AYUSH Doctor";
+
+String detail ="They’re experts on the heart and blood vessels. You might see them for heart failure, a heart attack, high blood pressure, or an irregular heartbeat.";

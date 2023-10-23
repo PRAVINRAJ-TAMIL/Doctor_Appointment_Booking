@@ -27,7 +27,9 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
     UPCOMING(doctor: doctors[3], hos: hospitals[3],),
     Canceled(doctor: doctors[4], hos: hospitals[5],),
   ];
-
+// final _pending=[
+//   Pending(doctor: doctors[3], hos: hospitals[3],),
+// ];
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -38,6 +40,14 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
           child: Column(
             
             children: [
+
+ const SizedBox(
+                height: 10,
+              ),
+
+Text("Pending",style: const TextStyle(fontSize: 20,fontWeight: FontWeight.w700)),
+
+// _pending[_buindex],
                const SizedBox(
                 height: 10,
               ),

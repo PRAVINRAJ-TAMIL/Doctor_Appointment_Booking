@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:medical/component/hospitalD.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/screen/appointment/bookAppointment.dart';
 import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/home/home.dart';
 import 'package:medical/screen/message/chatScreen.dart';
@@ -169,7 +170,7 @@ class DoctorsL extends StatelessWidget {
                                       children: [
                                         IconButton(
                                             onPressed: () {
-                                              Get.to(() => ChatScreen());
+                                              Get.to(() => ChatScreenAppBar(doctor: doctors[index]));
                                             },
                                             icon: Icon(
                                               Icons.message,
@@ -185,8 +186,18 @@ class DoctorsL extends StatelessWidget {
                                 ],
                               ),
                               const SizedBox(
+                                height: 10,
+                              ),
+                              ElevatedButton(
+                                 style: ElevatedButton.styleFrom(
+                             backgroundColor: MEDCOLOR.butcolor,
+                      shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(50),)),
+                    onPressed:() {
+                                Get.to(() => HospitalDetail(doctor: doctors[index]));
+                              }, child: Text("Book Appointment")),const SizedBox(
                                 height: 30,
-                              )
+                              ),
                             ]),
                           ),
                         ),
