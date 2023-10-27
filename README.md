@@ -34,15 +34,15 @@ Install dependencies:
   
 **#RUN APP  **
 
-# flutter pub get
-# flutter run
+ flutter pub get
+ flutter run
 
 
 ## LOGIN
 ![medlog](https://github.com/PRAVINRAJ-TAMIL/Doctor_Appointment_Booking/assets/114245769/200a2fa8-9f34-45d8-a71c-92313a778df6)
 
 ## SCREENS 
-# HOME
+ HOME
 
 <img width="4372" alt="Section 6@2x" src="https://github.com/PRAVINRAJ-TAMIL/Doctor_Appointment_Booking/assets/114245769/5d5e31a2-3a70-42be-afb5-f3666cb27dcb">
 
@@ -57,8 +57,8 @@ Install dependencies:
 ## License
 This project is licensed under the MIT License.
 ## Contact
-# Name Pravinraj -  
-# Email: Pravinrajtm36@gmail.com
+ Name Pravinraj -  
+ Email: Pravinrajtm36@gmail.com
 
 ## Before you begin, ensure you have met the following requirements:
 
