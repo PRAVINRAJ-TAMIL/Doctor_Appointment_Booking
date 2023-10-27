@@ -12,12 +12,12 @@ This project is a starting point for a Flutter application.
 ##SCREENS 
 #HOME
 
-![homemed](https://github.com/PRAVINRAJ-TAMIL/Doctor_Appointment_Booking/assets/114245769/904632a3-728c-416f-91a3-986f15bd1e58)
+<img width="4372" alt="Section 6@2x" src="https://github.com/PRAVINRAJ-TAMIL/Doctor_Appointment_Booking/assets/114245769/5d5e31a2-3a70-42be-afb5-f3666cb27dcb">
 
 ##ME
 ##
 ##
-![me](https://github.com/PRAVINRAJ-TAMIL/Doctor_Appointment_Booking/assets/114245769/f1e7c1c8-ce82-409a-9e89-401c0fdb96a7)
+
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
