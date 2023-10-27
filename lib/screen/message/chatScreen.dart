@@ -25,9 +25,7 @@ final phone = "+91987654321";
         title: Row(
           children: [
             DoctorImg(doctor: doctor,),
-            
-           
-          ],
+             ],
         ),
         leading:Padding(
           padding: const EdgeInsets.only(left: 14),

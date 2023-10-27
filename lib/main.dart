@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:medical/auth/auth_ser.dart';
+import 'package:medical/model/auth/auth_ser.dart';
 import 'package:medical/firebase_options.dart';
-import 'package:medical/screen/splash/splashScreen.dart';
+import 'package:medical/routes/routes.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/image.dart';
 import 'package:medical/utils/string.dart';
@@ -27,10 +27,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const GetMaterialApp(
+    return   GetMaterialApp(
       debugShowCheckedModeBanner:false,
+      getPages: Routes().getpages,
       home: Splash(),
-            // home: Auth(),
 
     );
   }

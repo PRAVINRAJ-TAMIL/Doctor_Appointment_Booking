@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -8,6 +8,7 @@ import 'package:medical/component/doctorList.dart';
 import 'package:medical/component/hospitalD.dart';
 import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
+import 'package:medical/routes/routes.dart';
 import 'package:medical/screen/appointment/bookAppointment.dart';
 import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/message/chatScreen.dart';
@@ -75,7 +76,7 @@ int index =0;
                       onPressed: () async {
                         FlutterPhoneDirectCaller.callNumber(phone);
                       },
-                      icon: Icon(Icons.call))
+                      icon: const Icon(Icons.call))
                 ],
               ),
               const SizedBox(
@@ -117,7 +118,8 @@ int index =0;
                       shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),)),
                     onPressed:() {
-                                Get.to(() =>BookAppointment());
+                      Get.toNamed(Routes.bookappointment);
+                                // Get.to(() =>BookAppointment());
                               }, child: Text("Book Appointment")),
                   ],
                 ),

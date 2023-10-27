@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:medical/routes/routes.dart';
 import 'package:medical/screen/login/signup.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/image.dart';
@@ -125,6 +126,7 @@ signInWithEmailAndPassword() async {
    if(form.currentState!.validate()){
                             print("valide");
                             signInWithEmailAndPassword();
+                           
                           }
 
                     }, child:  isLoading
@@ -138,8 +140,8 @@ signInWithEmailAndPassword() async {
                  Text(MEDSTRING.have_acc),
                   TextButton(
                       onPressed: () {
-                         
-                        Get.to(() => const SignUp()); 
+                           Get.toNamed(Routes.signup);
+                 
                       },
                       child: Text(MEDSTRING.create_ac))
                 ],

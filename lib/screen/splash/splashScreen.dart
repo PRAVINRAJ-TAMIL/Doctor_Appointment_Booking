@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:medical/auth/auth_ser.dart';
+import 'package:medical/model/auth/auth_ser.dart';
+import 'package:medical/routes/routes.dart';
 import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
-import 'package:medical/screen/login/login_Screen.dart';
-import 'package:medical/screen/login/signup.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/image.dart';
 import 'package:medical/utils/string.dart';
@@ -79,7 +78,7 @@ class SplashScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),),
                           onPressed: () {
-                            Get.to(() => const SignUp());
+                            Get.toNamed(Routes.signup);
 
                           },
                           child: Text(MEDSTRING.signup))

@@ -64,10 +64,7 @@ class MEDSTRING{
   static String special="Specialization ";
 // 
   static String medtez="MEDTEZ";
-  // static String cht_doc="Hi, Doctor ";
-  // static String cht_doc="Hi, Doctor ";
-  // static String cht_doc="Hi, Doctor ";
-  // static String cht_doc="Hi, Doctor ";
+
 
 
 

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:medical/routes/routes.dart';
 import 'package:medical/screen/login/login_Screen.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/image.dart';
@@ -151,7 +152,7 @@ class _SignUpState extends State<SignUp> {
                         if (form.currentState!.validate()) {
                           print("valide");
                           createUserWithEmailAndPassword();
-                          Get.to(() => const LoginScreen());
+                        Get.toNamed(Routes.loginscreen);
                         }
                       },
                       child: Text(MEDSTRING.create_ac)),
@@ -159,11 +160,8 @@ class _SignUpState extends State<SignUp> {
                   Text(MEDSTRING.already_have_ac),
                   TextButton(
                       onPressed: () {
-                        // if (form.currentState!.validate()) {
-                        //   print("valide");
-                        //   createUserWithEmailAndPassword();
-                        // }
-                        Get.to(() => const LoginScreen());
+                        Get.toNamed(Routes.loginscreen);
+                      
                       },
                       child: Text(MEDSTRING.login))
                 ],

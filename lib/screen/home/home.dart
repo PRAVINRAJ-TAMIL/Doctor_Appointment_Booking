@@ -30,7 +30,6 @@ final FirebaseAuth _auth=FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
   
-    // String? _displayName= _auth.currentUser!.username;
     return SafeArea(
         child: Scaffold(
             backgroundColor: MEDCOLOR.bg,
@@ -97,37 +96,29 @@ final FirebaseAuth _auth=FirebaseAuth.instance;
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: (){
-
+                          Get.to(() => DoctorsL(doctor: doctors[index],hos: hospitals[index],));
                         },
-                        child: InkWell(
-                          onTap: (){
-                            Get.to(() => DoctorsL(doctor: doctors[index],hos: hospitals[index],));
-        
-                          },
-                          child: Container(
-                            margin: const EdgeInsets.symmetric(
-                                vertical: 6, horizontal: 10),
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 213, 255, 220),
-                                borderRadius: BorderRadius.circular(24),
-                                boxShadow: const [
-                                  BoxShadow(
-                                    color: Color.fromARGB(73, 0, 255, 47),
-                                    blurRadius: 6,
-                                  )
-                                ]),
-                            child: Center(
-                              child: Text(
-                               
-                                
-                                doctors[index].description,
-                                style: const TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color.fromARGB(206, 52, 50, 50)),
-                                textAlign: TextAlign.center,
-                              ),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 6, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 213, 255, 220),
+                              borderRadius: BorderRadius.circular(24),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(73, 0, 255, 47),
+                                  blurRadius: 6,
+                                )
+                              ]),
+                          child: Center(
+                            child: Text(
+                              doctors[index].description,
+                              style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                  color: Color.fromARGB(206, 52, 50, 50)),
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         ),
@@ -146,7 +137,7 @@ final FirebaseAuth _auth=FirebaseAuth.instance;
                     InkWell(
                         onTap: (){showDialog(                 
                       context: context,
-                      builder: (ctx) => AlertDialog(
+                      builder: (contex) => AlertDialog(
                         shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(32.0))),
 shadowColor: MEDCOLOR.shad,
@@ -197,7 +188,7 @@ shadowColor: MEDCOLOR.shad,
                     InkWell(
                         onTap: (){showDialog(                 
                       context: context,
-                      builder: (ctx) => AlertDialog(
+                      builder: (contex) => AlertDialog(
                         shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(32.0))),
 
@@ -254,7 +245,7 @@ shadowColor: MEDCOLOR.shad,
                     InkWell(
                          onTap: (){showDialog(                 
                       context: context,
-                      builder: (ctx) => AlertDialog(
+                      builder: (contex) => AlertDialog(
                         shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(32.0))),
 
@@ -305,7 +296,7 @@ shadowColor: MEDCOLOR.shad,
                         // barrierColor: MEDCOLOR.primery,
                         
                       context: context,
-                      builder: (ctx) => AlertDialog(
+                      builder: (contex) => AlertDialog(
                      shape: RoundedRectangleBorder(
 		borderRadius: BorderRadius.circular(50),),
 shadowColor: Colors.black,

@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:get/get.dart';
@@ -5,6 +7,7 @@ import 'package:medical/component/aboutHospital.dart';
 import 'package:medical/component/doctorList.dart';
 import 'package:medical/component/hospitalD.dart';
 import 'package:medical/model/doctorModel.dart';
+import 'package:medical/routes/routes.dart';
 import 'package:medical/screen/appointment/sucess.dart';
 import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
 import 'package:medical/screen/message/chatScreen.dart';

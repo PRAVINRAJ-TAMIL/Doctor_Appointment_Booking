@@ -25,9 +25,9 @@ class Message extends StatelessWidget {
                     IconButton(
                   onPressed: 
                      () {
-                        Get.to(() => BottomNAvigation());
+                        Get.to(() => const BottomNAvigation());
                       },
-                     icon: Icon(
+                     icon: const Icon(
                         Icons.arrow_back_ios_rounded,
                       )),
                       SizedBox(width: MediaQuery.of(context).size.width/4,),

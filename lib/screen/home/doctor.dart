@@ -8,11 +8,9 @@ import 'package:medical/model/doctorModel.dart';
 import 'package:medical/model/hospitalModel.dart';
 import 'package:medical/screen/appointment/bookAppointment.dart';
 import 'package:medical/screen/bottomNavigation/bottomNavigat.dart';
-import 'package:medical/screen/home/home.dart';
 import 'package:medical/screen/message/chatScreen.dart';
 import 'package:medical/utils/colors.dart';
 import 'package:medical/utils/string.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class DoctorsL extends StatelessWidget {
   DoctorsL({super.key, required this.doctor, required this.hos});
