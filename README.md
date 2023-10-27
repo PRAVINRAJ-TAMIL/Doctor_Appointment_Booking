@@ -46,7 +46,7 @@ Install dependencies:
 
 <img width="4372" alt="Section 6@2x" src="https://github.com/PRAVINRAJ-TAMIL/Doctor_Appointment_Booking/assets/114245769/5d5e31a2-3a70-42be-afb5-f3666cb27dcb">
 
-#Usage
+## Usage
 -Register and log in as a user or a doctor.
 -Browse available doctors and their profiles.
 -Book appointments with your preferred doctors.
@@ -54,11 +54,13 @@ Install dependencies:
 -Access the user or doctor dashboard for managing appointments.
 ## Prerequisites
 
-#License
+##License
 This project is licensed under the MIT License.
-#Contact
-Name Pravinraj -  Email: Pravinrajtm36@gmail.com
-Before you begin, ensure you have met the following requirements:
+##Contact
+#Name Pravinraj -  
+#Email: Pravinrajtm36@gmail.com
+
+##Before you begin, ensure you have met the following requirements:
 
 - Flutter and Dart installed. You can install them by following the official [Flutter installation guide](https://flutter.dev/docs/get-started/install).
 - A Firebase project created and configured. Follow the official [Firebase setup guide](https://firebase.google.com/docs/flutter/setup).
