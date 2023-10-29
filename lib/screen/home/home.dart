@@ -374,33 +374,31 @@ shadowColor: Colors.black,
               SizedBox(
                 width: MediaQuery.of(context).size.width / 0.5,
                 height: MediaQuery.of(context).size.height / 0.5,
-                child: Expanded(
-                  child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 250,
-                              childAspectRatio: 3/ 2,
-                              crossAxisSpacing: 1,
-                              mainAxisSpacing: 1
-                              ),
-                      itemCount: hospitals.length,
-                      shrinkWrap: true,
-                      itemBuilder: (BuildContext context, int index) => InkWell(
-                            onTap: () {
-                              Get.to(() => HospitalDetail( hos: hospitals[index],
-                                      doctor: doctors[index],));
-                          
-                            },
-                            child: HospitalList(
-                              hos: hospitals[index],
-                              press: () {
-                                Get.to(() =>  HospitalDetail(hos: hospitals[index],
-                                            doctor: doctors[index]));
-                          
-                              },
+                child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 250,
+                            childAspectRatio: 3/ 2,
+                            crossAxisSpacing: 1,
+                            mainAxisSpacing: 1
                             ),
-                          )),
-                ),
+                    itemCount: hospitals.length,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int index) => InkWell(
+                          onTap: () {
+                            Get.to(() => HospitalDetail( hos: hospitals[index],
+                                    doctor: doctors[index],));
+                        
+                          },
+                          child: HospitalList(
+                            hos: hospitals[index],
+                            press: () {
+                              Get.to(() =>  HospitalDetail(hos: hospitals[index],
+                                          doctor: doctors[index]));
+                        
+                            },
+                          ),
+                        )),
               )
             ]))));
   }

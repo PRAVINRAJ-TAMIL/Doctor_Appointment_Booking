@@ -45,7 +45,7 @@ class _AppointmentSchudeleState extends State<AppointmentSchudele> {
                 height: 10,
               ),
 
-Text("Pending",style: const TextStyle(fontSize: 20,fontWeight: FontWeight.w700)),
+
 
 // _pending[_buindex],
                const SizedBox(
