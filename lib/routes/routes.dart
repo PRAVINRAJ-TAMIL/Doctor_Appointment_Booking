@@ -12,9 +12,7 @@ class Routes {
   static String loginscreen = "/loginscreen"; //signin
   static String auth = "/auth"; 
   static String bookappointment = "/bookappointment"; 
-  // static String loginscreen = "/loginscreen"; //signin
-  // static String loginscreen = "/loginscreen"; //signin
-  // static String loginscreen = "/loginscreen"; //signin
+
 
 
 
@@ -24,11 +22,7 @@ class Routes {
     GetPage(name: loginscreen, page: (() => const LoginScreen())),
     GetPage(name: auth, page: (() => const Auth())),
     GetPage(name: bookappointment, page: (() => const BookAppointment())),
-    GetPage(name: signup, page: (() => const SignUp())),
-    GetPage(name: signup, page: (() => const SignUp())),
-    GetPage(name: signup, page: (() => const SignUp())),
-    GetPage(name: signup, page: (() => const SignUp())),
-    GetPage(name: signup, page: (() => const SignUp())),
+
 
 
   ];

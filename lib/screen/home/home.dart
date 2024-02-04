@@ -36,15 +36,17 @@ final FirebaseAuth _auth=FirebaseAuth.instance;
             body: SingleChildScrollView(
                 child: Column(children: [
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding:  EdgeInsets.all(10.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                   
-                    Container(
-                      height:MediaQuery.of(context).size.height/10,
-                      width: MediaQuery.of(context).size.width/5,
-                      child: Image.asset(MEDIMAGE.logo,fit: BoxFit.cover,)),
+                    Expanded(
+                      child: Container(
+                        height:MediaQuery.of(context).size.height/10,
+                        width: MediaQuery.of(context).size.width/5,
+                        child: Image.asset(MEDIMAGE.logo,fit: BoxFit.cover,)),
+                    ),
                  
                     SizedBox(width: 50,),
                    Padding(
